@@ -4,14 +4,11 @@
     style="@style/MatchMatch">
 
     <FrameLayout
+        android:id="@+id/fl_fragment_mainActivity"
         style="@style/MatchMatch"/>
 
-    <RadioGroup
-        android:layout_width="match_parent"
-        android:layout_height="45dp"
-        android:layout_alignParentBottom="true"
-        android:background="#ffff00">
-
-    </RadioGroup>
-
+    <com.ashokvarma.bottomnavigation.BottomNavigationBar
+        android:id="@+id/bottom_bar_mainActivity"
+        style="@style/MatchWrap"
+        android:layout_alignParentBottom="true"/>
 </RelativeLayout>
