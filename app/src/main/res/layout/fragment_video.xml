@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              style="@style/MatchMatch"
+              android:orientation="vertical">
+
+    <com.ut.meipai.widget.TitleBar
+        android:id="@+id/layout_title_videoFragment"
+        style="@style/MatchWrap"
+        app:canBack="false"
+        app:title="Title"/>
+
+    <TextView
+        style="@style/WrapWrap"
+        android:text="@string/tab_video"/>
+
+</LinearLayout>

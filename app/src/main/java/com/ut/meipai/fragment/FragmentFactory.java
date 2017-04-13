@@ -1,7 +1,8 @@
 package com.ut.meipai.fragment;
 
-import android.support.v4.app.Fragment;
 import android.util.SparseArray;
+
+import com.ut.meipai.base.BaseFragment;
 
 /**
  * Created by 任和 on 2017/04/12 15:58
@@ -9,25 +10,41 @@ import android.util.SparseArray;
  * Desc:
  */
 public class FragmentFactory {
+    /**
+     * 首页底部Tab1:美拍
+     */
+    private static final int VIDEO = 0;
+    /**
+     * 首页底部Tab2:我的关注
+     */
+    private static final int FOCUS = 1;
+    /**
+     * 首页底部Tab3:频道
+     */
+    private static final int CHANNEL = 2;
+    /**
+     * 首页底部Tab4:个人中心
+     */
+    private static final int MINE = 3;
 
-    private static SparseArray<Fragment> sFragmentSparseArray = new SparseArray<>();
+    private static SparseArray<BaseFragment> sFragmentSparseArray = new SparseArray<>();
 
-    public static Fragment create(int position) {
-        Fragment fragment = sFragmentSparseArray.get(position);
+    public static BaseFragment create(int position) {
+        BaseFragment fragment = sFragmentSparseArray.get(position);
 
         if (fragment == null) {
             switch (position) {
-                case 0:
-                    fragment = new FragmentVideo();
+                case VIDEO:
+                    fragment = new VideoFragment();
                     break;
-                case 1:
-                    fragment = new FragmentFocus();
+                case FOCUS:
+                    fragment = new MyFocusFragment();
                     break;
-                case 2:
-                    fragment = new FragmentChannel();
+                case CHANNEL:
+                    fragment = new ChannelFragment();
                     break;
-                case 3:
-                    fragment = new FragmentMine();
+                case MINE:
+                    fragment = new MineFragment();
                     break;
                 default:
                     break;

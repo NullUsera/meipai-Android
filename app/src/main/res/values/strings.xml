@@ -1,7 +1,7 @@
 <resources>
-    <string name="app_name">MeiPai</string>
-    <string name="tab_one">Fish</string>
-    <string name="tab_two">Fly</string>
-    <string name="tab_three">Bird</string>
-    <string name="tab_four">Coffee</string>
+    <string name="app_name">美拍Demo</string>
+    <string name="tab_video">美拍</string>
+    <string name="tab_focus">我的关注</string>
+    <string name="tab_channel">频道</string>
+    <string name="tab_mine">个人中心</string>
 </resources>
