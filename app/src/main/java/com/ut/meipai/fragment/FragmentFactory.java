@@ -13,11 +13,11 @@ public class FragmentFactory {
     /**
      * 首页底部Tab1:美拍
      */
-    private static final int VIDEO = 0;
+    private static final int VIDEO   = 0;
     /**
      * 首页底部Tab2:我的关注
      */
-    private static final int FOCUS = 1;
+    private static final int FOCUS   = 1;
     /**
      * 首页底部Tab3:频道
      */
@@ -25,7 +25,7 @@ public class FragmentFactory {
     /**
      * 首页底部Tab4:个人中心
      */
-    private static final int MINE = 3;
+    private static final int MINE    = 3;
 
     private static SparseArray<BaseFragment> sFragmentSparseArray = new SparseArray<>();
 
