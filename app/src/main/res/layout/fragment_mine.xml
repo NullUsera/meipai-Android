@@ -1,10 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              style="@style/MatchMatch"
-              android:orientation="vertical">
+    style="@style/MatchMatch"
+    android:orientation="vertical">
 
     <TextView
-        style="@style/WrapWrap"
-        android:text="@string/tab_mine"/>
+        android:textSize="20dp"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center"
+        android:text="@string/tab_mine"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp" />
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <include layout="@layout/layout_my_message"/>
+    </ScrollView>
 </LinearLayout>

@@ -16,7 +16,6 @@ public class MyFocusFragment extends BaseFragment {
 
     @Override
     protected void initView(View view, Bundle savedInstanceState) {
-
     }
 
     @Override
