@@ -3,6 +3,20 @@
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar"/>
 
+    <!-- 底部菜单对话框样式 -->
+    <style name="dropDialog" parent="@android:style/Theme.Holo.DialogWhenLarge">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+
+    <!-- 底部菜单对话框动画 -->
+    <style name="dialogPushUpInAnimation" parent="@android:style/Theme.Holo.DialogWhenLarge">
+        <item name="android:windowEnterAnimation">@anim/drop_dialog_enter</item>
+        <item name="android:windowExitAnimation">@anim/drop_dialog_exit</item>
+    </style>
+
     <style name="WrapWrap">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
@@ -49,6 +63,16 @@
         <item name="android:background">#999999</item>
         <item name="android:layout_height">match_parent</item>
         <item name="android:layout_width">0.5dp</item>
+    </style>
+
+    <!-- 拍摄短视频或拍摄图片 -->
+    <style name="createStyle" parent="@style/WrapWrap">
+        <item name="android:layout_marginLeft">@dimen/badge_corner_radius</item>
+        <item name="android:drawablePadding">5dp</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:gravity">center</item>
+
     </style>
 
 </resources>
