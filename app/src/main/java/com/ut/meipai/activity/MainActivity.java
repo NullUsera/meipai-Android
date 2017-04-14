@@ -1,6 +1,8 @@
 package com.ut.meipai.activity;
 
 import android.support.v4.app.FragmentTransaction;
+import android.view.Gravity;
+import android.view.View;
 
 import com.ashokvarma.bottomnavigation.BadgeItem;
 import com.ashokvarma.bottomnavigation.BottomNavigationBar;
@@ -8,6 +10,7 @@ import com.ashokvarma.bottomnavigation.BottomNavigationItem;
 import com.ut.meipai.R;
 import com.ut.meipai.base.BaseActivity;
 import com.ut.meipai.fragment.FragmentFactory;
+import com.ut.meipai.widget.DropDialog;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -21,6 +24,7 @@ public class MainActivity extends BaseActivity implements BottomNavigationBar.On
 
     @BindView(R.id.bottom_bar_mainActivity)
     BottomNavigationBar mBottomNavBar;
+    private DropDialog mCreateDialog;
 
     @Override
     public void initView() {
@@ -31,7 +35,7 @@ public class MainActivity extends BaseActivity implements BottomNavigationBar.On
     }
 
     @Override
-    public void getPageData() {
+    public void loadPageData() {
     }
 
     private void setDefaultFragment() {
@@ -43,16 +47,17 @@ public class MainActivity extends BaseActivity implements BottomNavigationBar.On
 
         BadgeItem badgeItem = new BadgeItem();
         badgeItem.setHideOnSelect(false)
-                .setText("10")
-                .setBackgroundColorResource(R.color.orange)
+                .setText("5")
+                .setBackgroundColorResource(R.color.colorAccent)
                 .setBorderWidth(0);
 
         mBottomNavBar.setMode(BottomNavigationBar.MODE_FIXED);
         mBottomNavBar.setBackgroundStyle(BottomNavigationBar.BACKGROUND_STYLE_STATIC);
-        mBottomNavBar.addItem(new BottomNavigationItem(R.drawable.icon_one, R.string.tab_video).setActiveColorResource(R.color.green).setBadgeItem(badgeItem))
-                .addItem(new BottomNavigationItem(R.drawable.icon_two, R.string.tab_focus).setActiveColorResource(R.color.orange))
-                .addItem(new BottomNavigationItem(R.drawable.icon_three, R.string.tab_channel).setActiveColorResource(R.color.lime))
-                .addItem(new BottomNavigationItem(R.drawable.icon_four, R.string.tab_mine))
+        mBottomNavBar.addItem(new BottomNavigationItem(R.drawable.ic_main_meipai_normal, R.string.tab_video)).setActiveColor(R.color.colorAccent)
+                .addItem(new BottomNavigationItem(R.drawable.ic_main_focus_normal, R.string.tab_focus).setActiveColorResource(R.color.colorAccent))
+                .addItem(new BottomNavigationItem(R.drawable.ic_main_meipai_normal, "拍拍拍")).setActiveColor(R.color.colorAccent)
+                .addItem(new BottomNavigationItem(R.drawable.ic_main_channel_normal, R.string.tab_channel).setActiveColorResource(R.color.colorAccent))
+                .addItem(new BottomNavigationItem(R.drawable.ic_main_personal_normal, R.string.tab_mine).setActiveColorResource(R.color.colorAccent).setBadgeItem(badgeItem))
                 .setFirstSelectedPosition(0)
                 .initialise();
 
@@ -61,8 +66,12 @@ public class MainActivity extends BaseActivity implements BottomNavigationBar.On
 
     @Override
     public void onTabSelected(int position) {
-        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-        transaction.replace(R.id.fl_fragment_mainActivity, FragmentFactory.create(position)).commit();
+        if (position == 2) {
+            showCreateDialog();
+        } else {
+            FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+            transaction.replace(R.id.fl_fragment_mainActivity, FragmentFactory.create(position)).commit();
+        }
     }
 
     @Override
@@ -71,5 +80,48 @@ public class MainActivity extends BaseActivity implements BottomNavigationBar.On
 
     @Override
     public void onTabReselected(int position) {
+        showCreateDialog();
+    }
+
+    /**
+     * 底部弹出框选择拍摄类型
+     */
+    private void showCreateDialog() {
+        if (mCreateDialog == null) {
+            mCreateDialog = new DropDialog(this, R.layout.dialog_create_video, Gravity.BOTTOM, false);
+        }
+        mCreateDialog.show();
+        View createView = mCreateDialog.getContentView();
+        if (createView != null) {
+            createView.findViewById(R.id.tv_record_short_video).setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    create(v);
+                }
+            });
+            createView.findViewById(R.id.tv_take_photo).setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    create(v);
+                }
+            });
+        }
+    }
+
+    /**
+     * 跳转到对应功能页
+     */
+    private void create(View view) {
+        if (view.getId() == R.id.tv_take_photo) {
+            // // TODO: 2017/4/14 拍摄短视频
+
+        } else {
+            // // TODO: 2017/4/14 拍照
+
+        }
+
+        if (mCreateDialog != null) {
+            mCreateDialog.dismiss();
+        }
     }
 }

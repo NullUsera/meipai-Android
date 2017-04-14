@@ -23,7 +23,7 @@ public abstract class BaseActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         AppManager.getAppManager().addActivity(this);
         initView();
-        getPageData();
+        loadPageData();
     }
 
     /**
@@ -34,7 +34,7 @@ public abstract class BaseActivity extends AppCompatActivity {
     /**
      * 加载当前页数据
      */
-    public abstract void getPageData();
+    public abstract void loadPageData();
 
 
     public String getRunningActivityName() {
