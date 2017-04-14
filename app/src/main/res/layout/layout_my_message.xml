@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
+              style="@style/MatchMatch"
+              android:orientation="vertical">
 
     <TextView
         android:id="@+id/tv_no_phone"
@@ -13,7 +12,7 @@
         android:gravity="center"
         android:text="@string/no_phone"
         android:textColor="#fff"
-        android:textSize="12dp" />
+        android:textSize="12sp"/>
 
     <LinearLayout
         style="@style/my_message_common"
@@ -21,7 +20,7 @@
 
         <ImageView
             android:layout_width="50dp"
-            android:layout_height="50dp" />
+            android:layout_height="50dp"/>
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -33,7 +32,7 @@
                 style="@style/my_message_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="欧皇之气" />
+                android:text="欧皇之气"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -41,7 +40,7 @@
                 android:layout_alignBottom="@id/fragment_my_username"
                 android:layout_toRightOf="@id/fragment_my_username"
                 android:background="@mipmap/my_user_level_one"
-                android:visibility="gone" />
+                android:visibility="gone"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -49,13 +48,13 @@
                 android:layout_below="@id/fragment_my_username"
                 android:text="美拍id：8008208820"
                 android:textColor="#999999"
-                android:textSize="10dp" />
+                android:textSize="10dp"/>
 
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
-                android:src="@mipmap/right_arrow_point" />
+                android:src="@mipmap/right_arrow_point"/>
 
         </RelativeLayout>
     </LinearLayout>
@@ -76,14 +75,14 @@
                 style="@style/my_message_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="0" />
+                android:text="0"/>
 
             <TextView
                 style="@style/my_message_self_text"
-                android:text="美拍" />
+                android:text="美拍"/>
         </LinearLayout>
 
-        <View style="@style/vertical_divide" />
+        <View style="@style/vertical_divide"/>
 
         <LinearLayout
             android:layout_width="0dp"
@@ -96,14 +95,14 @@
                 style="@style/my_message_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="0" />
+                android:text="0"/>
 
             <TextView
                 style="@style/my_message_self_text"
-                android:text="转发" />
+                android:text="转发"/>
         </LinearLayout>
 
-        <View style="@style/vertical_divide" />
+        <View style="@style/vertical_divide"/>
 
         <LinearLayout
             android:layout_width="0dp"
@@ -116,14 +115,14 @@
                 style="@style/my_message_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="0" />
+                android:text="0"/>
 
             <TextView
                 style="@style/my_message_self_text"
-                android:text="关注" />
+                android:text="关注"/>
         </LinearLayout>
 
-        <View style="@style/vertical_divide" />
+        <View style="@style/vertical_divide"/>
 
         <LinearLayout
             android:layout_width="0dp"
@@ -136,11 +135,11 @@
                 style="@style/my_message_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="0" />
+                android:text="0"/>
 
             <TextView
                 style="@style/my_message_self_text"
-                android:text="粉丝" />
+                android:text="粉丝"/>
         </LinearLayout>
 
     </LinearLayout>

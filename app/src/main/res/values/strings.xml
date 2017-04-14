@@ -6,32 +6,4 @@
     <string name="tab_mine">个人中心</string>
     <string name="no_phone">你的账号存在安全风险，请绑定手机号。</string>
 
-    <style name="my_message_common">
-        <item name="android:background">#000</item>
-        <item name="android:layout_marginLeft">16dp</item>
-        <item name="android:layout_marginRight">10dp</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_width">match_parent</item>
-        <item name="android:paddingBottom">5dp</item>
-        <item name="android:paddingTop">5dp</item>
-    </style>
-
-    <style name="my_message_text">
-        <item name="android:textColor">#fff</item>
-        <item name="android:textSize">14dp</item>
-    </style>
-    <style name="my_message_self_text">
-        <item name="android:textColor">#999999</item>
-        <item name="android:textSize">10dp</item>
-        <item name="android:layout_width">wrap_content</item>
-        <item name="android:layout_height">wrap_content</item>
-    </style>
-
-    <style name="vertical_divide">
-        <item name="android:layout_marginTop">5dp</item>
-        <item name="android:layout_marginBottom">5dp</item>
-        <item name="android:background">#999999</item>
-        <item name="android:layout_height">match_parent</item>
-        <item name="android:layout_width">0.5dp</item>
-    </style>
 </resources>

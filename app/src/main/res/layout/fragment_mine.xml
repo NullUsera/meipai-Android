@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    style="@style/MatchMatch"
-    android:orientation="vertical">
+              style="@style/MatchMatch"
+              android:orientation="vertical">
 
     <TextView
-        android:textSize="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
         android:layout_gravity="center_horizontal"
         android:gravity="center"
         android:text="@string/tab_mine"
-        android:layout_width="wrap_content"
-        android:layout_height="30dp" />
+        android:textSize="20dp"/>
 
     <ScrollView
         android:layout_width="match_parent"
