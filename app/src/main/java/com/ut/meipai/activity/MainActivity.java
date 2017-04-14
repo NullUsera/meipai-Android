@@ -35,8 +35,7 @@ public class MainActivity extends BaseActivity implements BottomNavigationBar.On
     }
 
     private void setDefaultFragment() {
-        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-        transaction.replace(R.id.fl_fragment_mainActivity, FragmentFactory.create(0)).commit();
+        onTabSelected(0);
     }
 
     private void initBottomNavBar() {
