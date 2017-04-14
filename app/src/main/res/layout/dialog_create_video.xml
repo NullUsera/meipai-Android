@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 首页底部弹出框选择拍摄视频、拍摄图片 -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              style="@style/MatchWrap"
+              android:background="@drawable/ic_create_dialog"
+              android:gravity="center">
+
+    <TextView
+        android:id="@+id/tv_record_short_video"
+        style="@style/createStyle"
+        android:drawableTop="@drawable/ic_short_video"
+        android:text="@string/record_short_video"/>
+
+    <TextView
+        android:id="@+id/tv_take_photo"
+        style="@style/createStyle"
+        android:drawableTop="@drawable/ic_take_photo"
+        android:text="@string/take_photo"/>
+
+</LinearLayout>

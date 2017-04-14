@@ -21,11 +21,11 @@ public class FragmentFactory {
     /**
      * 首页底部Tab3:频道
      */
-    private static final int CHANNEL = 2;
+    private static final int CHANNEL = 3;
     /**
      * 首页底部Tab4:个人中心
      */
-    private static final int MINE    = 3;
+    private static final int MINE    = 4;
 
     private static SparseArray<BaseFragment> sFragmentSparseArray = new SparseArray<>();
 
