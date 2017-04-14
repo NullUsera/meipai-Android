@@ -4,17 +4,19 @@
     android:orientation="vertical">
 
     <TextView
-        android:textSize="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
         android:layout_gravity="center_horizontal"
         android:gravity="center"
         android:text="@string/tab_mine"
-        android:layout_width="wrap_content"
-        android:layout_height="30dp" />
+        android:textSize="20dp" />
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <include layout="@layout/layout_my_message"/>
+        <include layout="@layout/layout_my_message" />
+
+        <include layout="@layout/layout_my_other_set"/>
     </ScrollView>
 </LinearLayout>
