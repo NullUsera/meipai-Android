@@ -1,11 +1,85 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/MatchMatch"
+    android:layout_marginBottom="50dp"
     android:orientation="vertical">
 
     <com.allen.library.SuperTextView
         android:layout_width="match_parent"
-        android:layout_height="30dp" />
+        android:layout_height="44dp"
+        android:layout_marginTop="30dp"
+        app:sBackgroundColor="#000"
+        app:sLeftIconRes="@mipmap/my_message_draft"
+        app:sLeftTextColor="#fff"
+        app:sLeftTextString="@string/my_draft"
+        app:sLineShow="none"
+        app:sRightIconRes="@mipmap/right_arrow_point" />
+
+    <com.allen.library.SuperTextView
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        app:sBackgroundColor="#000"
+        app:sLeftIconRes="@mipmap/my_message_money"
+        app:sLeftTextColor="#fff"
+        app:sLeftTextString="@string/my_money"
+        app:sLineShow="none"
+        app:sRightIconRes="@mipmap/right_arrow_point" />
+
+    <com.allen.library.SuperTextView
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:layout_marginTop="30dp"
+        app:sBackgroundColor="#000"
+        app:sLeftIconRes="@mipmap/my_message_school"
+        app:sLeftTextColor="#fff"
+        app:sLeftTextString="@string/my_meipai_school"
+        app:sLineShow="none"
+        app:sRightIconRes="@mipmap/right_arrow_point" />
+
+    <com.allen.library.SuperTextView
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:layout_marginTop="30dp"
+        app:sBackgroundColor="#000"
+        app:sLeftIconRes="@mipmap/my_message_friend"
+        app:sLeftTextColor="#fff"
+        app:sLeftTextString="@string/my_find_friend"
+        app:sLineShow="none"
+        app:sRightIconRes="@mipmap/right_arrow_point" />
+
+    <View style="@style/horizontal_divide" />
+
+    <com.allen.library.SuperTextView
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        app:sBackgroundColor="#000"
+        app:sLeftIconRes="@mipmap/my_message_praise"
+        app:sLeftTextColor="#fff"
+        app:sLeftTextString="@string/my_praise_meipai"
+        app:sLineShow="none"
+        app:sRightIconRes="@mipmap/right_arrow_point" />
+
+    <com.allen.library.SuperTextView
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:layout_marginTop="30dp"
+        app:sBackgroundColor="#000"
+        app:sLeftIconRes="@mipmap/my_message_video"
+        app:sLeftTextColor="#fff"
+        app:sLeftTextString="@string/my_video"
+        app:sLineShow="none"
+        app:sRightIconRes="@mipmap/right_arrow_point" />
+
+    <com.allen.library.SuperTextView
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:layout_marginTop="30dp"
+        app:sBackgroundColor="#000"
+        app:sLeftIconRes="@mipmap/my_message_setting"
+        app:sLeftTextColor="#fff"
+        app:sLeftTextString="@string/my_setting"
+        app:sLineShow="none"
+        app:sRightIconRes="@mipmap/right_arrow_point" />
 
 </LinearLayout>
