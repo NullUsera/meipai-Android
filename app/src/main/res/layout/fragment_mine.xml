@@ -1,20 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    style="@style/MatchMatch"
-    android:orientation="vertical">
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              style="@style/MatchMatch"
+              android:orientation="vertical">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="30dp"
-        android:layout_gravity="center_horizontal"
-        android:gravity="center"
-        android:text="@string/tab_mine"
-        android:textSize="20dp" />
+    <com.ut.meipai.widget.TitleBar
+        style="@style/MatchWrap"
+        app:canBack="false"
+        app:title="@string/tab_mine"/>
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <include layout="@layout/layout_my_message" />
+        <LinearLayout
+            style="@style/MatchMatch"
+            android:orientation="vertical">
+
+            <include layout="@layout/layout_my_message"/>
+
+            <include layout="@layout/layout_my_done_message"/>
+
+            <include layout="@layout/layout_my_other_set"/>
+
+        </LinearLayout>
+
     </ScrollView>
 </LinearLayout>

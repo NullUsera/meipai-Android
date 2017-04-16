@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="30dp"
+    android:background="#000"
+    android:orientation="vertical">
+
+    <LinearLayout
+        style="@style/MatchWrap"
+        android:orientation="horizontal">
+
+        <TextView
+            style="@style/my_message_text"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_weight="1"
+            android:drawableLeft="@mipmap/my_message_praise"
+            android:drawablePadding="8dp"
+            android:gravity="center_vertical"
+            android:paddingLeft="16dp"
+            android:text="赞"
+            android:textSize="14dp" />
+
+        <TextView
+            style="@style/my_message_text"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_weight="1"
+            android:drawableLeft="@mipmap/my_message_include"
+            android:drawablePadding="8dp"
+            android:gravity="center_vertical"
+            android:paddingLeft="16dp"
+            android:text=" @我的" />
+    </LinearLayout>
+
+    <View style="@style/horizontal_divide" />
+
+    <LinearLayout
+        style="@style/MatchWrap"
+        android:orientation="horizontal">
+
+        <TextView
+            style="@style/my_message_text"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_weight="1"
+            android:drawableLeft="@mipmap/my_message_comment"
+            android:drawablePadding="8dp"
+            android:gravity="center_vertical"
+            android:paddingLeft="16dp"
+            android:text="评论"
+            android:textSize="14dp" />
+
+        <TextView
+            style="@style/my_message_text"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_weight="1"
+            android:drawableLeft="@mipmap/my_message_private"
+            android:drawablePadding="8dp"
+            android:gravity="center_vertical"
+            android:paddingLeft="16dp"
+            android:text=" 私信" />
+    </LinearLayout>
+
+</LinearLayout>
