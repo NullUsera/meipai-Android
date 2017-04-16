@@ -10,6 +10,7 @@ import com.ashokvarma.bottomnavigation.BottomNavigationItem;
 import com.ut.meipai.R;
 import com.ut.meipai.base.BaseActivity;
 import com.ut.meipai.fragment.FragmentFactory;
+import com.ut.meipai.manager.AppManager;
 import com.ut.meipai.widget.DropDialog;
 
 import butterknife.BindView;
@@ -95,13 +96,13 @@ public class MainActivity extends BaseActivity implements BottomNavigationBar.On
             createView.findViewById(R.id.tv_record_short_video).setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    create(v);
+                    redirect(v);
                 }
             });
             createView.findViewById(R.id.tv_take_photo).setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    create(v);
+                    redirect(v);
                 }
             });
         }
@@ -109,18 +110,15 @@ public class MainActivity extends BaseActivity implements BottomNavigationBar.On
 
     /**
      * 跳转到对应功能页
+     * @param v
      */
-    private void create(View view) {
-        if (view.getId() == R.id.tv_take_photo) {
-            // // TODO: 2017/4/14 拍摄短视频
-
-        } else {
-            // // TODO: 2017/4/14 拍照
-
-        }
+    private void redirect(View v) {
+        Class<?> clazz = v.getId() == R.id.tv_take_photo ? TakePhotoActivity.class : RecordVideoActivity.class;
+        AppManager.redirectPage(this, clazz);
 
         if (mCreateDialog != null) {
             mCreateDialog.dismiss();
         }
     }
+
 }
