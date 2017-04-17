@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 我的关注页 RecyclerView对应item -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              style="@style/MatchWrap"
+              android:background="#292b38"
+              android:orientation="vertical">
+
+    <RelativeLayout
+        style="@style/WrapWrap">
+
+        <com.ut.meipai.widget.CircleImageView
+            android:id="@+id/img_user_avatar_focusFragment"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_margin="@dimen/dp_10"
+            android:src="@drawable/ic_take_photo"/>
+
+        <TextView
+            android:id="@+id/tv_userName_focusFragment"
+            style="@style/WrapWrap"
+            android:layout_alignTop="@+id/img_user_avatar_focusFragment"
+            android:layout_toRightOf="@id/img_user_avatar_focusFragment"
+            android:text="@string/app_name"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_16"/>
+
+        <TextView
+            android:id="@+id/tv_date_focusFragment"
+            style="@style/WrapWrap"
+            android:layout_alignBottom="@+id/img_user_avatar_focusFragment"
+            android:layout_toRightOf="@id/img_user_avatar_focusFragment"
+            android:textColor="#909090"
+            android:textSize="@dimen/sp_10"/>
+
+    </RelativeLayout>
+
+    <fm.jiecao.jcvideoplayer_lib.JCVideoPlayerStandard
+        android:id="@+id/jc_player_focusFragment"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"/>
+
+</LinearLayout>

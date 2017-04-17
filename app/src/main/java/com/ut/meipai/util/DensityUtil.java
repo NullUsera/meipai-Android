@@ -2,6 +2,7 @@ package com.ut.meipai.util;
 
 import android.content.Context;
 import android.util.DisplayMetrics;
+import android.view.WindowManager;
 
 import com.ut.meipai.manager.AppManager;
 
@@ -51,5 +52,17 @@ public class DensityUtil {
                 .getDefaultDisplay()
                 .getMetrics(dm);
         return dm.widthPixels;
+    }
+
+    private static WindowManager getWindowManager(Context context) {
+        return (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);
+    }
+
+    public static int getScreenWidth(Context context) {
+        return getWindowManager(context).getDefaultDisplay().getWidth();
+    }
+
+    public static int getScreenHeight(Context context) {
+        return getWindowManager(context).getDefaultDisplay().getHeight();
     }
 }
