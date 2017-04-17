@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+    <com.ut.meipai.widget.FocusSurfaceView
+        android:id="@+id/sv_focus_recordVideoActivity"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:background="@color/colorDark">
+
+        <ImageView
+            android:id="@+id/img_back_recordVideoActivity"
+            style="@style/WrapWrap"
+            android:padding="12dp"
+            android:src="@drawable/ic_title_back"/>
+
+        <ImageView
+            android:id="@+id/img_flash_light_recordVideoActivity"
+            style="@style/WrapWrap"
+            android:layout_toLeftOf="@+id/img_turn_camera_recordVideoActivity"
+            android:paddingBottom="12dp"
+            android:paddingLeft="12dp"
+            android:paddingRight="8dp"
+            android:paddingTop="12dp"
+            android:src="@drawable/ic_flash_light_selector"/>
+
+        <ImageView
+            android:id="@+id/img_turn_camera_recordVideoActivity"
+            style="@style/WrapWrap"
+            android:layout_alignParentRight="true"
+            android:paddingBottom="12dp"
+            android:paddingLeft="8dp"
+            android:paddingRight="12dp"
+            android:paddingTop="12dp"
+            android:src="@drawable/ic_turn_camera"/>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        style="@style/MatchWrap"
+        android:layout_alignParentBottom="true"
+        android:background="#1a1825"
+        android:orientation="vertical"
+        android:paddingBottom="32dp">
+
+        <com.ut.meipai.widget.RecordProgressView
+            android:id="@+id/pv_progress_recordVideoActivity"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="6dp"
+            android:progressDrawable="@drawable/progress_record"/>
+
+        <ImageView
+            android:layout_width="8dp"
+            android:layout_height="8dp"
+            android:layout_gravity="center"
+            android:layout_margin="4dp"
+            android:src="@drawable/shape_circle_pink"
+            />
+
+        <TextView
+            android:id="@+id/tv_record_type"
+            style="@style/WrapWrap"
+            android:layout_gravity="center"
+            android:text="10秒MV"
+            android:textColor="@color/colorAccent"
+            android:textSize="14sp"
+            />
+
+        <RelativeLayout
+            style="@style/MatchWrap"
+            android:layout_marginTop="4dp">
+
+            <ImageView
+                android:id="@+id/btn_record_recordVideoActivity"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_centerInParent="true"
+                android:background="@drawable/shape_record_btn"
+                android:padding="24dp"
+                android:src="@drawable/btn_recork_start"
+                />
+
+            <ImageView
+                android:id="@+id/img_record_back_recordVideoActivity"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="16dp"
+                android:background="@drawable/shape_circle_gray"
+                android:paddingBottom="16dp"
+                android:paddingLeft="8dp"
+                android:paddingRight="8dp"
+                android:paddingTop="16dp"
+                android:src="@drawable/ic_record_back"
+                />
+
+
+            <ImageView
+                android:id="@+id/img_record_ok_recordVideoActivity"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="16dp"
+                android:background="@drawable/shape_circle_gray"
+                android:padding="16dp"
+                android:src="@drawable/ic_record_ok"
+                />
+
+        </RelativeLayout>
+    </LinearLayout>
+
+</RelativeLayout>
