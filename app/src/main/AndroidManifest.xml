@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           package="com.ut.meipai">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
+
     <application
         android:name=".app.MeiPaiApplication"
         android:allowBackup="true"
