@@ -1,26 +1,31 @@
 package com.ut.meipai.activity;
 
+import android.content.Intent;
 import android.os.Message;
+import android.text.TextUtils;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.ut.meipai.R;
-import com.ut.meipai.app.MeiPaiApplication;
 import com.ut.meipai.base.BaseActivity;
 import com.ut.meipai.listeners.IWeakHandler;
+import com.ut.meipai.util.DensityUtil;
 import com.ut.meipai.util.FileUtil;
 import com.ut.meipai.util.WeakHandler;
 import com.ut.meipai.widget.FocusSurfaceView;
 import com.ut.meipai.widget.RecordBtnWrapper;
 import com.ut.meipai.widget.RecordProgressView;
 import com.ut.meipai.widget.RoundProgressDialog;
+import com.yixia.camera.MediaRecorderBase;
 import com.yixia.camera.MediaRecorderNative;
 import com.yixia.camera.VCamera;
 import com.yixia.camera.model.MediaObject;
 import com.yixia.videoeditor.adapter.UtilityAdapter;
 
 import java.io.File;
-import java.util.LinkedList;
+import java.util.Locale;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -37,6 +42,7 @@ public class RecordVideoActivity extends BaseActivity implements RecordBtnWrappe
 
     final int MSG_PROGRESS = 1001;
     final int MSG_DEAL_VIDEO = 1002;
+    final int MSG_CUT_OVER = 1003;
 
     final int DELAY_TIME = 30;
 
@@ -58,6 +64,10 @@ public class RecordVideoActivity extends BaseActivity implements RecordBtnWrappe
     ImageView imgRecordOkRecordVideoActivity;
     @BindView(R.id.pv_progress_recordVideoActivity)
     RecordProgressView pvProgressRecordVideoActivity;
+    @BindView(R.id.relative_operate_recordVideoActivity)
+    RelativeLayout relativeOperateRecordVideoActivity;
+    @BindView(R.id.linear_operate_recordVideoActivity)
+    LinearLayout linearOperateRecordVideoActivity;
 
     private MediaRecorderNative mMediaRecorder;
     private MediaObject mMediaObject;
@@ -109,7 +119,7 @@ public class RecordVideoActivity extends BaseActivity implements RecordBtnWrappe
     }
 
     private void initVCamera() {
-        mVideoPath = FileUtil.getCacheDir(this) + RECORD_TEMP_FILE_NAME + "/" + System.currentTimeMillis();
+        mVideoPath = FileUtil.getCacheDir(this) + RECORD_TEMP_FILE_NAME;
         File file = new File(mVideoPath);
         if (!file.exists()) {
             //noinspection ResultOfMethodCallIgnored
@@ -198,6 +208,15 @@ public class RecordVideoActivity extends BaseActivity implements RecordBtnWrappe
                 pvProgressRecordVideoActivity.setProgress(mMediaObject.getDuration());
                 mHandler.sendEmptyMessageDelayed(MSG_PROGRESS, DELAY_TIME);
             }
+        } else if (msg.what == MSG_CUT_OVER) {
+            if (!TextUtils.isEmpty(mOutPath)) {
+                showToast("视频合成成功");
+                Intent intent = new Intent(this,EditVideoActivity.class);
+                intent.putExtra("path",mOutPath);
+                startActivity(intent);
+            } else {
+                showToast("视频合成失败");
+            }
         }
     }
 
@@ -232,10 +251,58 @@ public class RecordVideoActivity extends BaseActivity implements RecordBtnWrappe
         mDealDialog.dismiss();
 
         if (isSuccess == 0) {
-            //to EditVideoActivity
-            showToast("视频合成成功");
+            cutVideo();
         } else {
             showToast("视频合成失败");
+        }
+    }
+
+    private void cutVideo() {
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                int width = MediaRecorderBase.VIDEO_HEIGHT;
+
+                int screenHeight = DensityUtil.getScreenHeight(RecordVideoActivity.this);
+
+                int height = (screenHeight - linearOperateRecordVideoActivity.getMeasuredHeight()
+                        - relativeOperateRecordVideoActivity.getMeasuredHeight()) * MediaRecorderBase.VIDEO_HEIGHT / screenHeight;
+
+                int y = linearOperateRecordVideoActivity.getMeasuredHeight() * MediaRecorderBase.VIDEO_HEIGHT / screenHeight;
+
+                mOutPath = cutVideo(mOutPath, width, height, 0, y);
+                mHandler.sendEmptyMessage(MSG_CUT_OVER);
+            }
+        }).start();
+    }
+
+    /**
+     * 裁剪视频大小
+     */
+    private String cutVideo(String path, int cropWidth, int cropHeight, int x, int y) {
+
+        String outPut = mVideoPath + "/cutVideo.mp4";
+
+        //./ffmpeg -i 2x.mp4 -filter_complex "[0:v]setpts=0.5*PTS[v];[0:a]atempo=2.0[a]" -map "[v]" -map "[a]" output3.mp4
+        String filter = String.format(Locale.getDefault(), "crop=%d:%d:%d:%d", cropWidth, cropHeight, x, y);
+        int rate = (int) (MediaRecorderBase.VIDEO_BITRATE_HIGH * 1.5f);
+        StringBuilder sb = new StringBuilder("ffmpeg");
+        sb.append(" -i");
+        sb.append(" " + path);
+        sb.append(" -vf");
+        sb.append(" " + filter);
+        sb.append(" -acodec");
+        sb.append(" copy");
+        sb.append(" -b:v");
+        sb.append(" " + rate + "k");
+        sb.append(" -y");
+        sb.append(" " + outPut);
+
+        int i = UtilityAdapter.FFmpegRun("", sb.toString());
+        if (i == 0) {
+            return outPut;
+        } else {
+            return "";
         }
     }
 
@@ -256,6 +323,16 @@ public class RecordVideoActivity extends BaseActivity implements RecordBtnWrappe
             MediaObject.MediaPart lastPart = mMediaObject.getPart(mMediaObject.getMediaParts().size() - 1);
             mMediaObject.removePart(lastPart, true);
         }
+    }
+
+    @OnClick(R.id.img_flash_light_recordVideoActivity)
+    public void onFlashLightClicked() {
+        mMediaRecorder.toggleFlashMode();
+    }
+
+    @OnClick(R.id.img_turn_camera_recordVideoActivity)
+    public void onCameraTurnClicked() {
+        mMediaRecorder.switchCamera();
     }
 
     @Override

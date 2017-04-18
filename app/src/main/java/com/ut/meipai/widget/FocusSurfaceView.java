@@ -47,12 +47,10 @@ public class FocusSurfaceView extends SurfaceView {
      * 设置触摸对焦
      */
     public void setTouchFocus(MediaRecorderBase mediaRecorderBase) {
-
         this.mediaRecorderBase = mediaRecorderBase;
     }
 
     private void focusOnTouch(int x, int y, Camera camera) {
-
         Rect rect = new Rect(x - 100, y - 100, x + 100, y + 100);
         int left = rect.left * 2000 / getWidth() - 1000;
         int top = rect.top * 2000 / getHeight() - 1000;
@@ -71,7 +69,6 @@ public class FocusSurfaceView extends SurfaceView {
     }
 
     protected void focusOnRect(Rect rect, Camera camera) {
-
         if (TextUtils.isEmpty(focusMode)) {
             focusMode = camera.getParameters().getFocusMode();
         }
@@ -120,7 +117,7 @@ public class FocusSurfaceView extends SurfaceView {
     }
 
     /**
-     * 可优化
+     * 可优化 没必要每次都去创建这个ImageView和动画
      */
     private void addFocusToWindow() {
         if (va == null) {

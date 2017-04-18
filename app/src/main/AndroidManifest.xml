@@ -22,6 +22,7 @@
         </activity>
         <activity android:name=".activity.TakePhotoActivity"/>
         <activity android:name=".activity.RecordVideoActivity"/>
+        <activity android:name=".activity.EditVideoActivity"/>
     </application>
 
 </manifest>
