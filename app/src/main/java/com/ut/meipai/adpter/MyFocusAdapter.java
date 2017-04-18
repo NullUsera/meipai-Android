@@ -1,7 +1,6 @@
 package com.ut.meipai.adpter;
 
 import android.content.Context;
-import android.net.Uri;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -46,8 +45,8 @@ public class MyFocusAdapter extends RecyclerView.Adapter<MyFocusAdapter.MyFocusV
         holder.userName.setText(focusEntity.getUserName());
         holder.createDate.setText(focusEntity.getCreateDate());
         holder.jsPlayer.setUp("http://2449.vod.myqcloud.com/2449_22ca37a6ea9011e5acaaf51d105342e3.f20.mp4",
-                JCVideoPlayerStandard.SCREEN_LAYOUT_NORMAL, mContext.getResources().getString(R.string.app_name));
-        holder.jsPlayer.thumbImageView.setImageURI(Uri.parse("http://p.qpic.cn/videoyun/0/2449_43b6f696980311e59ed467f22794e792_1/640"));
+                JCVideoPlayerStandard.SCREEN_LAYOUT_NORMAL, "");
+        holder.jsPlayer.thumbImageView.setImageResource(R.drawable.ic_video_default_thumb);
     }
 
     @Override
@@ -65,7 +64,7 @@ public class MyFocusAdapter extends RecyclerView.Adapter<MyFocusAdapter.MyFocusV
         @BindView(R.id.jc_player_focusFragment)
         JCVideoPlayerStandard jsPlayer;
 
-        public MyFocusViewHolder(View view) {
+        MyFocusViewHolder(View view) {
             super(view);
             ButterKnife.bind(this, view);
         }

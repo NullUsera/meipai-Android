@@ -11,8 +11,14 @@
         app:extension_text="找好友"
         app:title="我的关注"/>
 
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/rv_focus_focusFragment"
-        style="@style/MatchMatch"/>
+    <in.srain.cube.views.ptr.PtrClassicFrameLayout
+        android:id="@+id/pcf_refresh_focusFragment"
+        style="@style/MatchMatch">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rv_focus_focusFragment"
+            style="@style/MatchMatch"/>
+
+    </in.srain.cube.views.ptr.PtrClassicFrameLayout>
 
 </LinearLayout>

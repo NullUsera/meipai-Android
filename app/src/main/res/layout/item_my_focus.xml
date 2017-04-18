@@ -20,9 +20,8 @@
             style="@style/WrapWrap"
             android:layout_alignTop="@+id/img_user_avatar_focusFragment"
             android:layout_toRightOf="@id/img_user_avatar_focusFragment"
-            android:text="@string/app_name"
             android:textColor="@color/white"
-            android:textSize="@dimen/sp_16"/>
+            android:textSize="@dimen/sp_18"/>
 
         <TextView
             android:id="@+id/tv_date_focusFragment"
@@ -38,5 +37,8 @@
         android:id="@+id/jc_player_focusFragment"
         android:layout_width="match_parent"
         android:layout_height="200dp"/>
+
+    <include
+        layout="@layout/layout_my_focus_item_footer"/>
 
 </LinearLayout>

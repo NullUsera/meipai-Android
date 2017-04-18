@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="45dp"
+              android:gravity="center_vertical"
+              android:orientation="horizontal">
+
+    <LinearLayout
+        style="@style/WrapWrap"
+        android:layout_weight="1"
+        android:gravity="center">
+
+        <TextView
+            style="@style/my_focus_item_bottom"
+            android:drawableLeft="@drawable/ic_like"
+            android:text="8"/>
+
+    </LinearLayout>
+
+    <View style="@style/vertical_divide"/>
+
+    <LinearLayout
+        style="@style/WrapWrap"
+        android:layout_weight="1"
+        android:gravity="center">
+
+        <TextView
+            style="@style/my_focus_item_bottom"
+            android:drawableLeft="@mipmap/my_message_comment"/>
+
+    </LinearLayout>
+
+    <View style="@style/vertical_divide"/>
+
+    <LinearLayout
+        style="@style/WrapWrap"
+        android:layout_weight="1"
+        android:gravity="center">
+
+        <TextView
+            style="@style/my_focus_item_bottom"
+            android:alpha="0.5"
+            android:drawableLeft="@drawable/ic_more"/>
+
+    </LinearLayout>
+
+</LinearLayout>

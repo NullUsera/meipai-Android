@@ -37,10 +37,10 @@ public class TitleBar extends RelativeLayout {
     @BindView(R.id.bt_page_back)
     Button   mBtBack;
     @BindView(R.id.bt_extension_func)
-    Button   mExtensionFunc;
+    TextView mExtensionFunc;
 
     @OnClick(R.id.bt_page_back)
-    void back() {
+    public void back() {
         if (isCanBack) {
             AppManager.getAppManager().finishActivity();
         }
