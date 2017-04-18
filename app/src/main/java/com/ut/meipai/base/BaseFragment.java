@@ -19,12 +19,13 @@ import butterknife.Unbinder;
  */
 public abstract class BaseFragment extends Fragment {
 
-    protected Context mContext;
-    private Unbinder mUnbinder;
+    protected Context  mContext;
+    private   Unbinder mUnbinder;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(getLayoutId(), container, false);
-        mUnbinder=ButterKnife.bind(this,view);
+        mUnbinder = ButterKnife.bind(this, view);
         initView(view, savedInstanceState);
         return view;
     }
@@ -39,7 +40,7 @@ public abstract class BaseFragment extends Fragment {
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
-        this.mContext = (Activity)context;
+        this.mContext = (Activity) context;
     }
 
     @Override
