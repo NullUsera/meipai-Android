@@ -35,7 +35,7 @@ public class TitleBar extends RelativeLayout {
     @BindView(R.id.tv_page_title)
     TextView mTvTitle;
     @BindView(R.id.bt_page_back)
-    Button   mBtBack;
+    Button mBtBack;
     @BindView(R.id.bt_extension_func)
     TextView mExtensionFunc;
 
@@ -65,30 +65,35 @@ public class TitleBar extends RelativeLayout {
         ButterKnife.bind(TitleBar.this);
         TypedArray ta = context.obtainStyledAttributes(attrs, R.styleable.titleBar);
         String title = ta.getString(R.styleable.titleBar_title);
+        isCanBack = ta.getBoolean(R.styleable.titleBar_canBack, true);
+        String extensionText = ta.getString(R.styleable.titleBar_extension_text);
 
-       setTvTitle(title);
-       setCanBack(mCanBack);
+        setTvTitle(title);
+        setCanBack();
+        setExtensionFunc(extensionText);
         ta.recycle();
     }
 
-    public void setTvTitle(String title) {
-        isCanBack = ta.getBoolean(R.styleable.titleBar_canBack, true);
-        String extensionText = ta.getString(R.styleable.titleBar_extension_text);
-        // 设置当前页面标题
-        if (!TextUtils.isEmpty(title)) {
-            mTvTitle.setText(title);
-        }
-    }
-
-    public void setCanBack(boolean mCanBack) {
-        // 是否显示返回按钮
-        mBtBack.setVisibility(isCanBack ? View.VISIBLE : View.INVISIBLE);
+    private void setExtensionFunc(String extensionText) {
         // 是否有扩展功能
         hasExtensionFunc = !TextUtils.isEmpty(extensionText);
         if (hasExtensionFunc) {
             mExtensionFunc.setText(extensionText);
         }
-        ta.recycle();
+    }
+
+    /**
+     * 设置当前页面标题
+     */
+    public void setTvTitle(String title) {
+        if (!TextUtils.isEmpty(title)) {
+            mTvTitle.setText(title);
+        }
+    }
+
+    public void setCanBack() {
+        // 是否显示返回按钮
+        mBtBack.setVisibility(isCanBack ? View.VISIBLE : View.INVISIBLE);
     }
 
     /**

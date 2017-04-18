@@ -1,12 +1,9 @@
 package com.ut.meipai.activity;
 
 import android.support.v4.app.FragmentTransaction;
-<<<<<<< HEAD
 import android.widget.Button;
-=======
 import android.view.Gravity;
 import android.view.View;
->>>>>>> master
 
 import com.ashokvarma.bottomnavigation.BadgeItem;
 import com.ashokvarma.bottomnavigation.BottomNavigationBar;
@@ -29,12 +26,9 @@ public class MainActivity extends BaseActivity implements BottomNavigationBar.On
 
     @BindView(R.id.bottom_bar_mainActivity)
     BottomNavigationBar mBottomNavBar;
-<<<<<<< HEAD
-    @BindView(R.id.btn_meipai_main)
-    Button mMpBtn;
-=======
+//    @BindView(R.id.btn_meipai_main)
+//    Button mMpBtn;
     private DropDialog mCreateDialog;
->>>>>>> master
 
     @Override
     public void initView() {
@@ -56,7 +50,6 @@ public class MainActivity extends BaseActivity implements BottomNavigationBar.On
 
     private void initBottomNavBar() {
 
-<<<<<<< HEAD
 //        BadgeItem badgeItem = new BadgeItem();
 //        badgeItem.setHideOnSelect(false)
 //                .setText("10")
@@ -70,23 +63,23 @@ public class MainActivity extends BaseActivity implements BottomNavigationBar.On
                 .addItem(new BottomNavigationItem(R.drawable.main_meipai_nopress,"   "))
                 .addItem(new BottomNavigationItem(R.drawable.main_channel_noselect, R.string.tab_channel).setActiveColorResource(R.color.pink))
                 .addItem(new BottomNavigationItem(R.drawable.main_personal_noselect, R.string.tab_mine).setActiveColorResource(R.color.pink))
-=======
-        BadgeItem badgeItem = new BadgeItem();
-        badgeItem.setHideOnSelect(false)
-                .setText("5")
-                .setBackgroundColorResource(R.color.colorAccent)
-                .setBorderWidth(0);
-
-        mBottomNavBar.setMode(BottomNavigationBar.MODE_FIXED);
-        mBottomNavBar.setBackgroundStyle(BottomNavigationBar.BACKGROUND_STYLE_STATIC);
-        mBottomNavBar.addItem(new BottomNavigationItem(R.drawable.ic_main_meipai_normal, R.string.tab_video)).setActiveColor(R.color.colorAccent)
-                .addItem(new BottomNavigationItem(R.drawable.ic_main_focus_normal, R.string.tab_focus).setActiveColorResource(R.color.colorAccent))
-                .addItem(new BottomNavigationItem(R.drawable.ic_main_meipai_normal, "拍拍拍")).setActiveColor(R.color.colorAccent)
-                .addItem(new BottomNavigationItem(R.drawable.ic_main_channel_normal, R.string.tab_channel).setActiveColorResource(R.color.colorAccent))
-                .addItem(new BottomNavigationItem(R.drawable.ic_main_personal_normal, R.string.tab_mine).setActiveColorResource(R.color.colorAccent).setBadgeItem(badgeItem))
->>>>>>> master
                 .setFirstSelectedPosition(0)
                 .initialise();
+//        BadgeItem badgeItem = new BadgeItem();
+//        badgeItem.setHideOnSelect(false)
+//                .setText("5")
+//                .setBackgroundColorResource(R.color.colorAccent)
+//                .setBorderWidth(0);
+
+//        mBottomNavBar.setMode(BottomNavigationBar.MODE_FIXED);
+//        mBottomNavBar.setBackgroundStyle(BottomNavigationBar.BACKGROUND_STYLE_STATIC);
+//        mBottomNavBar.addItem(new BottomNavigationItem(R.drawable.ic_main_meipai_normal, R.string.tab_video)).setActiveColor(R.color.colorAccent)
+//                .addItem(new BottomNavigationItem(R.drawable.ic_main_focus_normal, R.string.tab_focus).setActiveColorResource(R.color.colorAccent))
+//                .addItem(new BottomNavigationItem(R.drawable.ic_main_meipai_normal, "拍拍拍")).setActiveColor(R.color.colorAccent)
+//                .addItem(new BottomNavigationItem(R.drawable.ic_main_channel_normal, R.string.tab_channel).setActiveColorResource(R.color.colorAccent))
+//                .addItem(new BottomNavigationItem(R.drawable.ic_main_personal_normal, R.string.tab_mine).setActiveColorResource(R.color.colorAccent).setBadgeItem(badgeItem))
+//                .setFirstSelectedPosition(0)
+//                .initialise();
 
         mBottomNavBar.setTabSelectedListener(this);
     }
@@ -94,18 +87,12 @@ public class MainActivity extends BaseActivity implements BottomNavigationBar.On
     @Override
     public void onTabSelected(int position) {
         if (position == 2) {
-<<<<<<< HEAD
+            showCreateDialog();
             return;
         }
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         transaction.replace(R.id.fl_fragment_mainActivity, FragmentFactory.create(position)).commit();
-=======
-            showCreateDialog();
-        } else {
-            FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-            transaction.replace(R.id.fl_fragment_mainActivity, FragmentFactory.create(position)).commit();
-        }
->>>>>>> master
+//            showCreateDialog();
     }
 
     @Override

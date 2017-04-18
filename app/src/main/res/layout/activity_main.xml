@@ -9,13 +9,7 @@
         style="@style/MatchWrap"
         android:layout_alignParentBottom="true"/>
 
-    <Button
-        android:layout_centerHorizontal="true"
-        android:layout_alignParentBottom="true"
-        android:background="@drawable/main_btn_meipai"
-        android:id="@+id/btn_meipai_main"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+
     <FrameLayout
         android:id="@+id/fl_fragment_mainActivity"
         style="@style/MatchMatch"
