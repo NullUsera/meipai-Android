@@ -16,7 +16,7 @@ import in.srain.cube.views.ptr.PtrFrameLayout;
  * Desc:
  */
 
-public abstract class LoadAndRefreshFragment extends BaseFragment {
+public abstract class LoadAndRefreshFragment extends BaseRefreshLoadFragment {
 
     @BindView(R.id.rv_content)RecyclerView mRecyclerView;
     @BindView(R.id.ptr_load_and_refresh)PtrFrameLayout mPtrFrameLayout;

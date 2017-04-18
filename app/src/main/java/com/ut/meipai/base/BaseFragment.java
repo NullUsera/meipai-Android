@@ -21,17 +21,13 @@ public abstract class BaseFragment extends Fragment {
 
     protected Context mContext;
     private Unbinder mUnbinder;
+    protected View mView;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(getLayoutId(), container, false);
-        mUnbinder=ButterKnife.bind(this,view);
-        initView(view, savedInstanceState);
-        return view;
-    }
-
-    @Override
-    public void onPause() {
-        super.onPause();
+         mView = inflater.inflate(getLayoutId(), container, false);
+        mUnbinder=ButterKnife.bind(this,mView);
+        initView(mView, savedInstanceState);
+        return mView;
     }
 
     protected abstract void initView(View view, Bundle savedInstanceState);

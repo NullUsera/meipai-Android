@@ -24,6 +24,7 @@
         android:orientation="horizontal">
 
         <ImageView
+            android:id="@+id/iv_mine_head_image"
             android:layout_marginRight="10dp"
             android:src="@mipmap/ic_launcher"
             android:layout_width="70dp"
@@ -35,29 +36,32 @@
             android:gravity="center_vertical">
 
             <TextView
-                android:id="@+id/fragment_my_username"
+                android:id="@+id/tv_mine_username"
                 style="@style/my_message_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="未登录"/>
 
             <TextView
+                android:id="@+id/tv_mine_level"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignBottom="@id/fragment_my_username"
-                android:layout_toRightOf="@id/fragment_my_username"
+                android:layout_alignBottom="@id/tv_mine_username"
+                android:layout_toRightOf="@id/tv_mine_username"
                 android:background="@drawable/ic_my_user_level_one"
                 android:visibility="gone"/>
 
             <TextView
+                android:id="@+id/tv_mine_userid"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/fragment_my_username"
+                android:layout_below="@id/tv_mine_username"
                 android:text="美拍id：8008208820"
                 android:textColor="#999999"
                 android:textSize="10dp"/>
 
             <ImageView
+                android:id="@+id/iv_mine_user_point"
                 android:visibility="gone"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -71,7 +75,7 @@
         style="@style/horizontal_divide"/>
     <LinearLayout
         android:layout_marginBottom="5dp"
-        android:id="@+id/ll_personal_message"
+        android:id="@+id/ll_mine_message"
         style="@style/MatchWrap"
         android:orientation="horizontal">
 
@@ -83,6 +87,7 @@
             android:orientation="vertical">
 
             <TextView
+                android:id="@+id/tv_mine_number_meipai"
                 style="@style/my_message_text"
                 android:text="0"/>
 
@@ -101,6 +106,7 @@
             android:orientation="vertical">
 
             <TextView
+                android:id="@+id/tv_mine_number_relay"
                 style="@style/my_message_text"
                 android:text="0"/>
 
@@ -119,6 +125,7 @@
             android:orientation="vertical">
 
             <TextView
+                android:id="@+id/tv_mine_number_concern"
                 style="@style/my_message_text"
                 android:text="0"/>
 
@@ -137,6 +144,7 @@
             android:orientation="vertical">
 
             <TextView
+                android:id="@+id/tv_mine_number_fan"
                 style="@style/my_message_text"
                 android:text="0"/>
 
