@@ -4,8 +4,10 @@ import android.app.ActivityManager;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.text.TextUtils;
 import android.view.KeyEvent;
 import android.view.Window;
+import android.widget.Toast;
 
 import com.ut.meipai.manager.AppManager;
 
@@ -23,7 +25,7 @@ public abstract class BaseActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         AppManager.getAppManager().addActivity(this);
         initView();
-        getPageData();
+        loadPageData();
     }
 
     /**
@@ -34,7 +36,9 @@ public abstract class BaseActivity extends AppCompatActivity {
     /**
      * 加载当前页数据
      */
-    public abstract void getPageData();
+    public void loadPageData(){
+
+    }
 
 
     public String getRunningActivityName() {
@@ -42,6 +46,14 @@ public abstract class BaseActivity extends AppCompatActivity {
                 Context.ACTIVITY_SERVICE);
         return activityManager.getRunningTasks(1).get(0).topActivity.getClassName();
     }
+
+    public void showToast(String message) {
+        if (TextUtils.isEmpty(message)) {
+            return;
+        }
+        Toast.makeText(this, message, message.length() > 8 ? Toast.LENGTH_LONG : Toast.LENGTH_SHORT).show();
+    }
+
 
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {

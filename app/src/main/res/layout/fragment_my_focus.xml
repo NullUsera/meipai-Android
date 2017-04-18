@@ -5,11 +5,20 @@
               android:orientation="vertical">
 
     <com.ut.meipai.widget.TitleBar
+        android:id="@+id/titleBar_focusFragment"
         style="@style/MatchWrap"
-        app:canBack="false"/>
+        app:canBack="false"
+        app:extension_text="找好友"
+        app:title="我的关注"/>
 
-    <TextView
-        style="@style/WrapWrap"
-        android:text="@string/tab_focus"/>
+    <in.srain.cube.views.ptr.PtrClassicFrameLayout
+        android:id="@+id/pcf_refresh_focusFragment"
+        style="@style/MatchMatch">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rv_focus_focusFragment"
+            style="@style/MatchMatch"/>
+
+    </in.srain.cube.views.ptr.PtrClassicFrameLayout>
 
 </LinearLayout>

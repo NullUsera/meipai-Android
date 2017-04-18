@@ -3,10 +3,6 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     style="@style/MatchMatch">
 
-    <FrameLayout
-        android:id="@+id/fl_fragment_mainActivity"
-        style="@style/MatchMatch"/>
-
     <com.ashokvarma.bottomnavigation.BottomNavigationBar
         android:background="#000000"
         android:id="@+id/bottom_bar_mainActivity"
@@ -20,4 +16,9 @@
         android:id="@+id/btn_meipai_main"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
+    <FrameLayout
+        android:id="@+id/fl_fragment_mainActivity"
+        style="@style/MatchMatch"
+        android:layout_above="@id/bottom_bar_mainActivity"/>
+
 </RelativeLayout>

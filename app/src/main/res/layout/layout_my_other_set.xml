@@ -14,7 +14,7 @@
         app:sLeftTextColor="#fff"
         app:sLeftTextString="@string/my_draft"
         app:sLineShow="none"
-        app:sRightIconRes="@mipmap/right_arrow_point" />
+        app:sRightIconRes="@drawable/ic_right_arrow_point" />
 
     <com.allen.library.SuperTextView
         android:layout_width="match_parent"
@@ -24,7 +24,7 @@
         app:sLeftTextColor="#fff"
         app:sLeftTextString="@string/my_money"
         app:sLineShow="none"
-        app:sRightIconRes="@mipmap/right_arrow_point" />
+        app:sRightIconRes="@drawable/ic_right_arrow_point" />
 
     <com.allen.library.SuperTextView
         android:layout_width="match_parent"
@@ -35,7 +35,7 @@
         app:sLeftTextColor="#fff"
         app:sLeftTextString="@string/my_meipai_school"
         app:sLineShow="none"
-        app:sRightIconRes="@mipmap/right_arrow_point" />
+        app:sRightIconRes="@drawable/ic_right_arrow_point" />
 
     <com.allen.library.SuperTextView
         android:layout_width="match_parent"
@@ -46,7 +46,7 @@
         app:sLeftTextColor="#fff"
         app:sLeftTextString="@string/my_find_friend"
         app:sLineShow="none"
-        app:sRightIconRes="@mipmap/right_arrow_point" />
+        app:sRightIconRes="@drawable/ic_right_arrow_point" />
 
     <View style="@style/horizontal_divide" />
 
@@ -58,7 +58,7 @@
         app:sLeftTextColor="#fff"
         app:sLeftTextString="@string/my_praise_meipai"
         app:sLineShow="none"
-        app:sRightIconRes="@mipmap/right_arrow_point" />
+        app:sRightIconRes="@drawable/ic_right_arrow_point" />
 
     <com.allen.library.SuperTextView
         android:layout_width="match_parent"
@@ -69,7 +69,7 @@
         app:sLeftTextColor="#fff"
         app:sLeftTextString="@string/my_video"
         app:sLineShow="none"
-        app:sRightIconRes="@mipmap/right_arrow_point" />
+        app:sRightIconRes="@drawable/ic_right_arrow_point" />
 
     <com.allen.library.SuperTextView
         android:layout_width="match_parent"
@@ -80,6 +80,6 @@
         app:sLeftTextColor="#fff"
         app:sLeftTextString="@string/my_setting"
         app:sLineShow="none"
-        app:sRightIconRes="@mipmap/right_arrow_point" />
+        app:sRightIconRes="@drawable/ic_right_arrow_point" />
 
 </LinearLayout>

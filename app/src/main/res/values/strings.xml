@@ -1,10 +1,12 @@
 <resources>
     <string name="app_name">美拍Demo</string>
     <string name="tab_video">美拍</string>
-    <string name="tab_focus">我的关注</string>
+    <string name="tab_focus">关注</string>
     <string name="tab_channel">频道</string>
-    <string name="tab_mine">个人中心</string>
+    <string name="tab_mine">我</string>
     <string name="no_phone">你的账号存在安全风险，请绑定手机号。</string>
+    <string name="take_photo">照片</string>
+    <string name="record_short_video">短视频</string>
     <string name="my_draft">草稿箱</string>
     <string name="my_meipai_school">美拍大学</string>
     <string name="my_find_friend">找好友</string>
@@ -12,5 +14,6 @@
     <string name="my_video">让视频更好玩</string>
     <string name="my_setting">设置</string>
     <string name="my_money">我的钱包</string>
+
 
 </resources>

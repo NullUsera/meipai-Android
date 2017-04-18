@@ -26,16 +26,22 @@ public class TitleBar extends RelativeLayout {
     /**
      * 当前页是否显示返回按钮，默认显示
      */
-    private boolean mCanBack;
+    private boolean isCanBack;
+    /**
+     * 是否有扩展功能
+     */
+    private boolean hasExtensionFunc;
 
     @BindView(R.id.tv_page_title)
     TextView mTvTitle;
     @BindView(R.id.bt_page_back)
-    Button mBtBack;
+    Button   mBtBack;
+    @BindView(R.id.bt_extension_func)
+    TextView mExtensionFunc;
 
     @OnClick(R.id.bt_page_back)
-    void back() {
-        if (mCanBack) {
+    public void back() {
+        if (isCanBack) {
             AppManager.getAppManager().finishActivity();
         }
     }
@@ -59,14 +65,15 @@ public class TitleBar extends RelativeLayout {
         ButterKnife.bind(TitleBar.this);
         TypedArray ta = context.obtainStyledAttributes(attrs, R.styleable.titleBar);
         String title = ta.getString(R.styleable.titleBar_title);
-        mCanBack = ta.getBoolean(R.styleable.titleBar_canBack, true);
-       
+
        setTvTitle(title);
        setCanBack(mCanBack);
         ta.recycle();
     }
 
     public void setTvTitle(String title) {
+        isCanBack = ta.getBoolean(R.styleable.titleBar_canBack, true);
+        String extensionText = ta.getString(R.styleable.titleBar_extension_text);
         // 设置当前页面标题
         if (!TextUtils.isEmpty(title)) {
             mTvTitle.setText(title);
@@ -74,8 +81,32 @@ public class TitleBar extends RelativeLayout {
     }
 
     public void setCanBack(boolean mCanBack) {
-        this.mCanBack = mCanBack;
-        // 控制是否显示返回按钮
-        mBtBack.setVisibility(mCanBack ? View.VISIBLE : View.INVISIBLE);
+        // 是否显示返回按钮
+        mBtBack.setVisibility(isCanBack ? View.VISIBLE : View.INVISIBLE);
+        // 是否有扩展功能
+        hasExtensionFunc = !TextUtils.isEmpty(extensionText);
+        if (hasExtensionFunc) {
+            mExtensionFunc.setText(extensionText);
+        }
+        ta.recycle();
+    }
+
+    /**
+     * 扩展功能的点击事件
+     *
+     * @param listener {@link OnExtensionListener}
+     */
+    public void setOnExtensionListener(final OnExtensionListener listener) {
+        if (hasExtensionFunc)
+            mExtensionFunc.setOnClickListener(new OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    listener.onExtensionClick(v);
+                }
+            });
+    }
+
+    public interface OnExtensionListener {
+        void onExtensionClick(View v);
     }
 }
