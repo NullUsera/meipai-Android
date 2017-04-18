@@ -3,12 +3,14 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     style="@style/MatchMatch">
 
-    <FrameLayout
-        android:id="@+id/fl_fragment_mainActivity"
-        style="@style/MatchMatch"/>
-
     <com.ashokvarma.bottomnavigation.BottomNavigationBar
         android:id="@+id/bottom_bar_mainActivity"
         style="@style/MatchWrap"
         android:layout_alignParentBottom="true"/>
+
+    <FrameLayout
+        android:id="@+id/fl_fragment_mainActivity"
+        style="@style/MatchMatch"
+        android:layout_above="@id/bottom_bar_mainActivity"/>
+
 </RelativeLayout>

@@ -10,4 +10,5 @@
     <color name="blue">#03A9F4</color>
     <color name="white">#FFFFFF</color>
     <color name="lime">#CDDC39</color>
+    <color name="recyclerView_divide">#181b24</color>
 </resources>
