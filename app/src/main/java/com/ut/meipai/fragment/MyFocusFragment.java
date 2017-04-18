@@ -10,14 +10,20 @@ import com.ut.meipai.adpter.MyFocusAdapter;
 import com.ut.meipai.base.BaseFragment;
 import com.ut.meipai.data.MyFocusData;
 import com.ut.meipai.util.UTToast;
+<<<<<<< HEAD
 import com.ut.meipai.widget.RecyclerViewDivider;
+=======
+>>>>>>> 220c4005b2995784087b422e6c344bf8c8325271
 import com.ut.meipai.widget.TitleBar;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+<<<<<<< HEAD
 import in.srain.cube.views.ptr.PtrClassicFrameLayout;
 import in.srain.cube.views.ptr.PtrDefaultHandler;
 import in.srain.cube.views.ptr.PtrFrameLayout;
+=======
+>>>>>>> 220c4005b2995784087b422e6c344bf8c8325271
 
 /**
  * Created by 任和 on 2017/04/12 16:08
@@ -27,16 +33,24 @@ import in.srain.cube.views.ptr.PtrFrameLayout;
 public class MyFocusFragment extends BaseFragment {
     private static final long DELAY_MILLS = 1500;
 
+<<<<<<< HEAD
     @BindView(R.id.pcf_refresh_focusFragment)
     PtrClassicFrameLayout mPtrClassicFrameLayout;
     @BindView(R.id.titleBar_focusFragment)
     TitleBar              mTitleBar;
     @BindView(R.id.rv_focus_focusFragment)
     RecyclerView          mRecyclerView;
+=======
+    @BindView(R.id.titleBar_focusFragment)
+    TitleBar     mTitleBar;
+    @BindView(R.id.rv_focus_focusFragment)
+    RecyclerView mRecyclerView;
+>>>>>>> 220c4005b2995784087b422e6c344bf8c8325271
 
     @Override
     protected void initView(View view, Bundle savedInstanceState) {
         ButterKnife.bind(this, view);
+<<<<<<< HEAD
         initTitleBar();
         initRefresh();
         initRecyclerView();
@@ -44,12 +58,15 @@ public class MyFocusFragment extends BaseFragment {
 
 
     private void initTitleBar() {
+=======
+>>>>>>> 220c4005b2995784087b422e6c344bf8c8325271
         mTitleBar.setOnExtensionListener(new TitleBar.OnExtensionListener() {
             @Override
             public void onExtensionClick(View v) {
                 UTToast.presentToast(getContext(), "找好友干啥？");
             }
         });
+<<<<<<< HEAD
     }
 
     private void initRecyclerView() {
@@ -72,6 +89,10 @@ public class MyFocusFragment extends BaseFragment {
                 }, DELAY_MILLS);
             }
         });
+=======
+        mRecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+        mRecyclerView.setAdapter(new MyFocusAdapter(getContext(), MyFocusData.getSampleData()));
+>>>>>>> 220c4005b2995784087b422e6c344bf8c8325271
     }
 
     @Override
