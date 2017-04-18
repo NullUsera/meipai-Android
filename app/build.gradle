@@ -33,4 +33,5 @@ dependencies {
     compile 'com.jakewharton:butterknife:8.5.1'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.5.1'
     compile 'com.github.lygttpod:SuperTextView:1.1.1'
+    compile 'in.srain.cube:ultra-ptr:1.0.11'
 }

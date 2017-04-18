@@ -8,7 +8,16 @@
         style="@style/MatchMatch"/>
 
     <com.ashokvarma.bottomnavigation.BottomNavigationBar
+        android:background="#000000"
         android:id="@+id/bottom_bar_mainActivity"
         style="@style/MatchWrap"
         android:layout_alignParentBottom="true"/>
+
+    <Button
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/main_btn_meipai"
+        android:id="@+id/btn_meipai_main"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
 </RelativeLayout>

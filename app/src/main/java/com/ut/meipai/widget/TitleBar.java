@@ -58,16 +58,24 @@ public class TitleBar extends RelativeLayout {
         View.inflate(context, R.layout.layout_title_bar, TitleBar.this);
         ButterKnife.bind(TitleBar.this);
         TypedArray ta = context.obtainStyledAttributes(attrs, R.styleable.titleBar);
-
         String title = ta.getString(R.styleable.titleBar_title);
         mCanBack = ta.getBoolean(R.styleable.titleBar_canBack, true);
+       
+       setTvTitle(title);
+       setCanBack(mCanBack);
+        ta.recycle();
+    }
+
+    public void setTvTitle(String title) {
         // 设置当前页面标题
         if (!TextUtils.isEmpty(title)) {
             mTvTitle.setText(title);
         }
+    }
+
+    public void setCanBack(boolean mCanBack) {
+        this.mCanBack = mCanBack;
         // 控制是否显示返回按钮
         mBtBack.setVisibility(mCanBack ? View.VISIBLE : View.INVISIBLE);
-
-        ta.recycle();
     }
 }

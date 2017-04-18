@@ -3,8 +3,12 @@
               style="@style/MatchMatch"
               android:orientation="vertical">
 
-    <TextView
-        style="@style/WrapWrap"
-        android:text="@string/tab_channel"/>
+        <com.allen.library.SuperTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        </com.allen.library.SuperTextView>
+
+        <include layout="@layout/layout_load_and_refresh"/>
 
 </LinearLayout>

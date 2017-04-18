@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.ut.meipai.widget.TitleBar xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/MatchWrap"
+    android:id="@+id/title_bar"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:canBace="false"
+    android:orientation="vertical">
+
+</com.ut.meipai.widget.TitleBar>

@@ -1,6 +1,7 @@
 package com.ut.meipai.activity;
 
 import android.support.v4.app.FragmentTransaction;
+import android.widget.Button;
 
 import com.ashokvarma.bottomnavigation.BadgeItem;
 import com.ashokvarma.bottomnavigation.BottomNavigationBar;
@@ -21,6 +22,8 @@ public class MainActivity extends BaseActivity implements BottomNavigationBar.On
 
     @BindView(R.id.bottom_bar_mainActivity)
     BottomNavigationBar mBottomNavBar;
+    @BindView(R.id.btn_meipai_main)
+    Button mMpBtn;
 
     @Override
     public void initView() {
@@ -28,6 +31,8 @@ public class MainActivity extends BaseActivity implements BottomNavigationBar.On
         ButterKnife.bind(this);
         initBottomNavBar();
         setDefaultFragment();
+//        int width = (int) (getResources().getDisplayMetrics().widthPixels*0.2);
+//        mMpBtn.setWidth(width);
     }
 
     @Override
@@ -41,18 +46,19 @@ public class MainActivity extends BaseActivity implements BottomNavigationBar.On
 
     private void initBottomNavBar() {
 
-        BadgeItem badgeItem = new BadgeItem();
-        badgeItem.setHideOnSelect(false)
-                .setText("10")
-                .setBackgroundColorResource(R.color.orange)
-                .setBorderWidth(0);
+//        BadgeItem badgeItem = new BadgeItem();
+//        badgeItem.setHideOnSelect(false)
+//                .setText("10")
+//                .setBackgroundColorResource(R.color.orange)
+//                .setBorderWidth(0);
 
         mBottomNavBar.setMode(BottomNavigationBar.MODE_FIXED);
         mBottomNavBar.setBackgroundStyle(BottomNavigationBar.BACKGROUND_STYLE_STATIC);
-        mBottomNavBar.addItem(new BottomNavigationItem(R.drawable.icon_one, R.string.tab_video).setActiveColorResource(R.color.green).setBadgeItem(badgeItem))
-                .addItem(new BottomNavigationItem(R.drawable.icon_two, R.string.tab_focus).setActiveColorResource(R.color.orange))
-                .addItem(new BottomNavigationItem(R.drawable.icon_three, R.string.tab_channel).setActiveColorResource(R.color.lime))
-                .addItem(new BottomNavigationItem(R.drawable.icon_four, R.string.tab_mine))
+        mBottomNavBar.addItem(new BottomNavigationItem(R.drawable.main_meipai_noselect, R.string.tab_video).setActiveColorResource(R.color.pink))
+                .addItem(new BottomNavigationItem(R.drawable.main_concern_noselect, R.string.tab_focus).setActiveColorResource(R.color.pink))
+                .addItem(new BottomNavigationItem(R.drawable.main_meipai_nopress,"   "))
+                .addItem(new BottomNavigationItem(R.drawable.main_channel_noselect, R.string.tab_channel).setActiveColorResource(R.color.pink))
+                .addItem(new BottomNavigationItem(R.drawable.main_personal_noselect, R.string.tab_mine).setActiveColorResource(R.color.pink))
                 .setFirstSelectedPosition(0)
                 .initialise();
 
@@ -61,6 +67,9 @@ public class MainActivity extends BaseActivity implements BottomNavigationBar.On
 
     @Override
     public void onTabSelected(int position) {
+        if (position == 2) {
+            return;
+        }
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         transaction.replace(R.id.fl_fragment_mainActivity, FragmentFactory.create(position)).commit();
     }
