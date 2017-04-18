@@ -13,8 +13,8 @@
         android:id="@+id/relative_operate_recordVideoActivity"
         android:layout_width="match_parent"
         android:layout_height="80dp"
-        android:clickable="true"
-        android:background="@color/colorDark">
+        android:background="@color/colorDark"
+        android:clickable="true">
 
         <ImageView
             android:id="@+id/img_back_recordVideoActivity"
@@ -46,7 +46,8 @@
 
     <LinearLayout
         android:id="@+id/linear_operate_recordVideoActivity"
-        style="@style/MatchWrap"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
         android:layout_alignParentBottom="true"
         android:background="#1a1825"
         android:clickable="true"

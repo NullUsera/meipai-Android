@@ -1,7 +1,9 @@
 package com.ut.meipai.activity;
 
+import android.media.MediaMetadataRetriever;
 import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.view.WindowManager;
 
 import com.ut.meipai.R;
 import com.ut.meipai.base.BaseActivity;
@@ -21,6 +23,8 @@ public class EditVideoActivity extends BaseActivity {
 
     @Override
     public void initView() {
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+                WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_edit_video);
         ButterKnife.bind(this);
         init();
