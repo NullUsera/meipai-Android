@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_deep"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/iv_channel_hot_logo"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_marginRight="20dp"
+        android:src="@mipmap/ic_launcher" />
+
+    <TextView
+        android:id="@+id/tv_channel_hot_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_toRightOf="@id/iv_channel_hot_logo"
+        android:text="明日的与一"
+        android:textColor="@color/white"
+        android:textSize="14dp" />
+
+    <TextView
+        android:id="@+id/tv_channel_hot_number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_channel_hot_name"
+        android:layout_marginTop="5dp"
+        android:layout_toRightOf="@id/iv_channel_hot_logo"
+        android:text="3215.2万次播放"
+        android:textColor="@color/common_gray"
+        android:textSize="12dp" />
+
+    <Button
+        android:visibility="gone"
+        android:background="@drawable/shape_channel_hot_extra"
+        android:padding="2dp"
+        android:id="@+id/tv_channel_hot_extra"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/tv_channel_hot_name"
+        android:layout_marginLeft="5dp"
+        android:layout_toRightOf="@id/tv_channel_hot_name"
+        android:text="HOT"
+        android:textColor="@color/white"
+        android:textSize="12dp" />
+
+    <Button
+        android:visibility="gone"
+        android:padding="2dp"
+        android:background="@drawable/shape_channel_hot_award"
+        android:id="@+id/tv_channel_hot_award"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/tv_channel_hot_name"
+        android:layout_marginLeft="5dp"
+        android:layout_toRightOf="@id/tv_channel_hot_extra"
+        android:text="有奖"
+        android:textColor="@color/white"
+        android:textSize="12dp" />
+
+</RelativeLayout>

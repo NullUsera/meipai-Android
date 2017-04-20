@@ -1,15 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              style="@style/MatchMatch"
-              android:orientation="vertical">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/MatchMatch"
+    android:orientation="vertical">
 
-        <include layout="@layout/layout_include_title_bar"/>
-        <com.allen.library.SuperTextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+    <include
+        layout="@layout/layout_include_title_bar"
+        android:visibility="gone" />
 
-        </com.allen.library.SuperTextView>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/main_channel_title">
 
-        <include layout="@layout/layout_load_and_refresh"/>
+        <TextView
+            android:background="#00000000"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:drawableLeft="@mipmap/my_channel_search"
+            android:gravity="center"
+            android:text="大家多再搜：尼玛嗨" />
+
+        <ImageView
+            android:layout_centerVertical="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:src="@mipmap/my_message_friend" />
+    </RelativeLayout>
+
+    <include layout="@layout/layout_load_and_refresh" />
 
 </LinearLayout>

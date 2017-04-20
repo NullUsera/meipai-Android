@@ -14,6 +14,7 @@
     <string name="my_video">让视频更好玩</string>
     <string name="my_setting">设置</string>
     <string name="my_money">我的钱包</string>
-
+    <string name="video_rank">视频排行榜</string>
+    <string name="newer_report">新人报道</string>
 
 </resources>

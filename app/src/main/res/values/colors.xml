@@ -12,4 +12,7 @@
     <color name="lime">#CDDC39</color>
     <color name="pink">#FF34B3</color>
     <color name="recyclerView_divide">#181b24</color>
+    <color name="background_deep">#2c2b39</color>
+    <color name="background_shallow">#FF333141</color>
+    <color name="common_gray">#959595</color>
 </resources>
