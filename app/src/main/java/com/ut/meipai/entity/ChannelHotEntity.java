@@ -9,6 +9,12 @@ package com.ut.meipai.entity;
 
 public class ChannelHotEntity {
 
+    public ChannelHotEntity(String logo, String name, double playNumber) {
+        this.logo = logo;
+        this.name = name;
+        this.playNumber = playNumber;
+    }
+
     public String logo;
     public String name;
     public double playNumber;

@@ -5,6 +5,7 @@ import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.allen.library.SuperTextView;
 import com.ut.meipai.R;
 import com.ut.meipai.base.BaseFragment;
 
@@ -22,6 +23,8 @@ public class MineFragment extends BaseFragment {
     @BindView(R.id.tv_mine_level)TextView mTvLevel;
     @BindView(R.id.ll_mine_message)LinearLayout mLlMessage;
     @BindView(R.id.ll_mine_done_message)LinearLayout mLlDoneMessage;
+    @BindView(R.id.stv_mine_money)SuperTextView mStvMoney;
+    @BindView(R.id.tv_no_phone)TextView mTvPhone;
     private boolean isLogin;
 
     @Override
@@ -32,8 +35,10 @@ public class MineFragment extends BaseFragment {
 
     private void hideView() {
         if (!isLogin){
-//            mLlMessage.setVisibility(View.GONE);
-//            mLlDoneMessage.setVisibility(View.GONE);
+            mLlMessage.setVisibility(View.GONE);
+            mLlDoneMessage.setVisibility(View.GONE);
+            mStvMoney.setVisibility(View.GONE);
+            mTvPhone.setVisibility(View.GONE);
         }
     }
 

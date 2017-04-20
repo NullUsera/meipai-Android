@@ -8,6 +8,7 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
+import com.orhanobut.logger.Logger;
 import com.ut.meipai.R;
 import com.ut.meipai.entity.ChannelHotEntity;
 import com.ut.meipai.util.GlideUtil;
@@ -28,6 +29,7 @@ public class ChannelHotAdapter extends BaseQuickAdapter<ChannelHotEntity, BaseVi
 
     @Override
     protected void convert(BaseViewHolder helper, ChannelHotEntity entity) {
+        Logger.e("___adapter进入");
         if (entity == null) return;
         if (entity.isAward) helper.getView(R.id.tv_channel_hot_award).setVisibility(View.VISIBLE);
         if (entity.isHot) helper.getView(R.id.tv_channel_hot_extra).setVisibility(View.VISIBLE);

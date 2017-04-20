@@ -18,8 +18,8 @@ import in.srain.cube.views.ptr.PtrFrameLayout;
 
 public abstract class LoadAndRefreshFragment extends BaseRefreshLoadFragment {
 
-    @BindView(R.id.rv_content)RecyclerView mRecyclerView;
-    @BindView(R.id.ptr_load_and_refresh)PtrFrameLayout mPtrFrameLayout;
+    @BindView(R.id.rv_content)protected RecyclerView mRecyclerView;
+    @BindView(R.id.ptr_load_and_refresh)protected PtrFrameLayout mPtrFrameLayout;
     @BindView(R.id.title_bar)TitleBar mTitleBar;
 
     @Override
@@ -27,7 +27,10 @@ public abstract class LoadAndRefreshFragment extends BaseRefreshLoadFragment {
         if (mTitleBar != null){
             setTitleBar(mTitleBar);
         }
+//        loadData();
     }
+
+    protected abstract void loadData();
 
     protected abstract void setTitleBar(TitleBar mTitleBar);
 }

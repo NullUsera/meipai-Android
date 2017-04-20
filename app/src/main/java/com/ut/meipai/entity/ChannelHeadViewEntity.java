@@ -7,6 +7,12 @@ package com.ut.meipai.entity;
  */
 
 public class ChannelHeadViewEntity {
+
+    public ChannelHeadViewEntity(String type, String image) {
+        this.type = type;
+        this.image = image;
+    }
+
     public String type;
     public String image;
 }

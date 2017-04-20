@@ -19,18 +19,23 @@ import butterknife.Unbinder;
  */
 public abstract class BaseFragment extends Fragment {
 
-    protected Context mContext;
+    protected Activity mContext;
     private Unbinder mUnbinder;
     protected View mView;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
          mView = inflater.inflate(getLayoutId(), container, false);
         mUnbinder=ButterKnife.bind(this,mView);
-        initView(mView, savedInstanceState);
+        this.beforeInitView();
+        this.initView(mView, savedInstanceState);
         return mView;
     }
 
     protected abstract void initView(View view, Bundle savedInstanceState);
+
+    protected void beforeInitView(){
+
+    };
 
     @Override
     public void onAttach(Context context) {
