@@ -16,5 +16,15 @@
     <string name="my_money">我的钱包</string>
     <string name="video_rank">视频排行榜</string>
     <string name="newer_report">新人报道</string>
+    <string name="my_private">隐私</string>
+    <string name="my_account">我的账户</string>
+    <string name="my_common">通用</string>
+    <string name="my_return_idea">意见反馈</string>
+    <string name="clear_cache">清楚缓存</string>
+    <string name="about_meipai">关于美拍</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
 
 </resources>

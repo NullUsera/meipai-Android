@@ -1,5 +1,6 @@
 package com.ut.meipai.fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.LinearLayout;
@@ -7,6 +8,7 @@ import android.widget.TextView;
 
 import com.allen.library.SuperTextView;
 import com.ut.meipai.R;
+import com.ut.meipai.activity.MySettingActivity;
 import com.ut.meipai.base.BaseFragment;
 
 import butterknife.BindView;
@@ -62,6 +64,7 @@ public class MineFragment extends BaseFragment {
             case R.id.stv_mine_school:
                 break;
             case R.id.stv_mine_setting:
+                startActivity(new Intent(getActivity(), MySettingActivity.class));
                 break;
             case R.id.stv_mine_video:
                 break;

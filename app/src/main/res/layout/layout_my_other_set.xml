@@ -8,8 +8,6 @@
     <com.allen.library.SuperTextView
         android:id="@+id/stv_mine_draft"
         style="@style/item_mine_stv"
-        android:layout_width="match_parent"
-        android:layout_height="44dp"
         android:layout_marginTop="30dp"
         app:sLeftIconRes="@mipmap/my_message_draft"
         app:sLeftTextString="@string/my_draft" />
@@ -17,16 +15,12 @@
     <com.allen.library.SuperTextView
         android:id="@+id/stv_mine_money"
         style="@style/item_mine_stv"
-        android:layout_width="match_parent"
-        android:layout_height="44dp"
         app:sLeftIconRes="@mipmap/my_message_money"
         app:sLeftTextString="@string/my_money" />
 
     <com.allen.library.SuperTextView
         android:id="@+id/stv_mine_school"
         style="@style/item_mine_stv"
-        android:layout_width="match_parent"
-        android:layout_height="44dp"
         android:layout_marginTop="30dp"
         app:sLeftIconRes="@mipmap/my_message_school"
         app:sLeftTextString="@string/my_meipai_school" />
@@ -34,8 +28,6 @@
     <com.allen.library.SuperTextView
         android:id="@+id/stv_mine_friend"
         style="@style/item_mine_stv"
-        android:layout_width="match_parent"
-        android:layout_height="44dp"
         android:layout_marginTop="30dp"
         app:sLeftIconRes="@mipmap/my_message_friend"
         app:sLeftTextString="@string/my_find_friend" />
@@ -45,16 +37,12 @@
     <com.allen.library.SuperTextView
         android:id="@+id/stv_mine_praised"
         style="@style/item_mine_stv"
-        android:layout_width="match_parent"
-        android:layout_height="44dp"
         app:sLeftIconRes="@mipmap/my_message_praise"
         app:sLeftTextString="@string/my_praise_meipai" />
 
     <com.allen.library.SuperTextView
         android:id="@+id/stv_mine_video"
         style="@style/item_mine_stv"
-        android:layout_width="match_parent"
-        android:layout_height="44dp"
         android:layout_marginTop="30dp"
         app:sLeftIconRes="@mipmap/my_message_video"
         app:sLeftTextString="@string/my_video" />
@@ -62,8 +50,6 @@
     <com.allen.library.SuperTextView
         android:id="@+id/stv_mine_setting"
         style="@style/item_mine_stv"
-        android:layout_width="match_parent"
-        android:layout_height="44dp"
         android:layout_marginTop="30dp"
         app:sLeftIconRes="@mipmap/my_message_setting"
         app:sLeftTextString="@string/my_setting" />

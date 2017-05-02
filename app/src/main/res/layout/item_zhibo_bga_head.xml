@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="80dp"
+    android:background="@color/background_shallow"
+    android:paddingBottom="10dp"
+    android:paddingLeft="10dp"
+    android:paddingRight="8dp"
+    android:paddingTop="10dp">
+
+    <ImageView
+        android:id="@+id/iv_item_head_left"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:src="@drawable/ic_zhibo_item_left" />
+
+    <TextView
+        android:id="@+id/tv_item_head_chart"
+        android:layout_marginLeft="5dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@id/iv_item_head_left"
+        android:text="本周制杖榜"
+        android:textColor="@color/white"
+        android:textSize="14dp" />
+
+    <ImageView
+        android:id="@+id/iv_arrow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:src="@drawable/ic_right_arrow_point" />
+
+    <ImageView
+        android:layout_marginRight="5dp"
+        android:src="@drawable/ic_like"
+        android:id="@+id/iv_right_one"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toLeftOf="@id/iv_arrow" />
+
+    <ImageView
+        android:layout_marginRight="5dp"
+        android:src="@drawable/ic_like"
+        android:id="@+id/iv_right_two"
+        android:layout_toLeftOf="@id/iv_right_one"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true" />
+
+    <ImageView
+        android:id="@+id/iv_right_three"
+        android:layout_marginRight="5dp"
+        android:src="@drawable/ic_like"
+        android:layout_toLeftOf="@id/iv_right_two"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true" />
+
+
+</RelativeLayout>

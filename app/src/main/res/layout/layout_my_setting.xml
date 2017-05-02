@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_shallow"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <include layout="@layout/layout_include_title_bar" />
+
+    <com.allen.library.SuperTextView
+        android:id="@+id/stv_my_setting_account"
+        app:sLeftTextString="@string/my_account"
+        style="@style/item_mine_stv" />
+
+    <com.allen.library.SuperTextView
+        android:id="@+id/stv_my_setting_private"
+        android:layout_marginTop="30dp"
+        app:sLeftTextString="@string/my_private"
+        style="@style/item_mine_stv" />
+
+    <com.allen.library.SuperTextView
+        android:id="@+id/stv_my_setting_common"
+        app:sLeftTextString="@string/my_common"
+        style="@style/item_mine_stv" />
+
+    <com.allen.library.SuperTextView
+        android:id="@+id/stv_my_setting_return"
+        android:layout_marginTop="30dp"
+        app:sLeftTextString="@string/my_return_idea"
+        style="@style/item_mine_stv" />
+
+    <com.allen.library.SuperTextView
+        android:id="@+id/stv_my_setting_about"
+        app:sLeftTextString="@string/about_meipai"
+        style="@style/item_mine_stv" />
+
+    <com.allen.library.SuperTextView
+        android:id="@+id/stv_my_setting_clear_cache"
+        android:layout_marginTop="30dp"
+        app:sRightIconRes ="@null"
+        app:sRightTextString="70.3M"
+        app:sRightTextColor="@color/common_gray"
+        style="@style/item_mine_stv"
+        app:sLeftTextString="@string/clear_cache" />
+
+    <com.allen.library.SuperTextView
+        android:id="@+id/stv_my_setting_login"
+        android:layout_marginTop="30dp"
+        app:sBackgroundColor="#000"
+        app:sCenterTextString="登录"
+        app:sCenterTextColor="#02b38a"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"></com.allen.library.SuperTextView>
+</LinearLayout>

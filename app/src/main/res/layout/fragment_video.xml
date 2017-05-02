@@ -4,14 +4,17 @@
               style="@style/MatchMatch"
               android:orientation="vertical">
 
-    <com.ut.meipai.widget.TitleBar
-        android:id="@+id/layout_title_videoFragment"
-        style="@style/MatchWrap"
-        app:canBack="false"
-        app:title="Title"/>
+    <com.flyco.tablayout.CommonTabLayout
+        android:id="@+id/tab_fragment_video"
+        android:background="@color/background_shallow"
+        android:layout_height="50dp"
+        android:layout_width="match_parent"/>
 
-    <TextView
-        style="@style/WrapWrap"
-        android:text="@string/tab_video"/>
 
+    <android.support.v4.view.ViewPager
+        android:id="@+id/vp_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </android.support.v4.view.ViewPager>
 </LinearLayout>
