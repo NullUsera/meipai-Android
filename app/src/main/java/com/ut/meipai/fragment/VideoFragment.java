@@ -9,7 +9,9 @@ import android.widget.FrameLayout;
 import com.flyco.tablayout.CommonTabLayout;
 import com.flyco.tablayout.SlidingTabLayout;
 import com.flyco.tablayout.listener.CustomTabEntity;
+import com.flyco.tablayout.listener.OnTabSelectListener;
 import com.ut.meipai.R;
+import com.ut.meipai.adpter.VideoViewpagerAdapter;
 import com.ut.meipai.base.BaseFragment;
 import com.ut.meipai.entity.VideoTabNamesEntity;
 import com.ut.meipai.util.GlideUtil;
@@ -31,11 +33,43 @@ public class VideoFragment extends BaseFragment {
     @BindView(R.id.vp_container)ViewPager mViewPager;
 
     private List<Fragment> mFragments = new ArrayList<>();
-    private List<CustomTabEntity> mTabEntity=new ArrayList<>();
+    private ArrayList<CustomTabEntity> mTabEntity=new ArrayList<>();
 
     @Override
     protected void initView(View view, Bundle savedInstanceState) {
+        mCommonTabLayout.setTabData(getTab());
+        mViewPager.setAdapter(new VideoViewpagerAdapter(getFragmentManager(),mFragments));
+        setClick();
+    }
 
+    private void setClick() {
+        mCommonTabLayout.setOnTabSelectListener(new OnTabSelectListener() {
+            @Override
+            public void onTabSelect(int position) {
+                mViewPager.setCurrentItem(position);
+            }
+
+            @Override
+            public void onTabReselect(int position) {
+
+            }
+        });
+        mViewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
+            }
+
+            @Override
+            public void onPageSelected(int position) {
+                mCommonTabLayout.setCurrentTab(position);
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int state) {
+
+            }
+        });
     }
 
     @Override
@@ -43,20 +77,15 @@ public class VideoFragment extends BaseFragment {
         return R.layout.fragment_video;
     }
 
-    public List getTab(){
+    public ArrayList getTab(){
         mTabEntity.add(new VideoTabNamesEntity("直播",R.drawable.ic_video_zhibo_selected,R.drawable.ic_video_zhibo_unselected));
         mTabEntity.add(new VideoTabNamesEntity("热门",R.drawable.ic_video_hot_selected,R.drawable.ic_video_hot_unselected));
         mTabEntity.add(new VideoTabNamesEntity("同城",R.drawable.ic_video_zhibo_selected,R.drawable.ic_video_zhibo_unselected));
-        return mTabEntity;
-    }
-
-    public List getFragment(){
         mFragments.add(new VideoZhiboFragment());
         mFragments.add(new VideoHotFragment());
-        mFragments.add(new VideoZhiboFragment());
-        return mFragments;
+        mFragments.add(new VideoCityWideFragment());
+        return mTabEntity;
     }
-
 
 }
 

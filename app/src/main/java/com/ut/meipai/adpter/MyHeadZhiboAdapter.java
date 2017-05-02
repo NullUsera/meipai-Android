@@ -1,4 +1,4 @@
-package com.ut.meipai.activity;
+package com.ut.meipai.adpter;
 
 import android.content.Context;
 

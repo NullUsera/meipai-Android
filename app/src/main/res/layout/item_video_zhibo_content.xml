@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_shallow"
+    android:orientation="vertical"
+    android:paddingBottom="15dp">
+
+    <TextView
+        android:id="@+id/tv_zhibo_introduce"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:ellipsize="end"
+        android:maxEms="16"
+        android:maxLines="1"
+        android:text="带着好歌寻找知音，走进音乐的殿堂，感受文化的精髓"
+        android:textColor="@color/white"
+        android:textSize="14dp" />
+
+
+    <TextView
+        android:id="@+id/tv_item_zhibo_concern"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/tv_zhibo_introduce"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="5dp"
+        android:text="17173"
+        android:textColor="@color/common_gray"
+        android:textSize="12dp" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/tv_zhibo_introduce"
+        android:layout_marginRight="5dp"
+        android:layout_toLeftOf="@id/tv_item_zhibo_concern"
+        android:alpha="0.5"
+        android:src="@drawable/ic_video_zhibo_unselected" />
+
+    <View
+        android:layout_marginBottom="10dp"
+        android:id="@+id/view_divide"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_above="@id/tv_item_zhibo_concern" />
+
+    <ImageView
+        android:id="@+id/iv_item_zhibo_cover"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/view_divide"
+        android:background="#321654" />
+
+    <TextView
+        android:textSize="12dp"
+        android:id="@+id/tv_zhibo_state"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="15dp"
+        android:drawableLeft="@drawable/ic_now_zhibo"
+        android:drawablePadding="3dp"
+        android:text="直播中"
+        android:textColor="@color/white" />
+
+    <TextView
+        android:id="@+id/tv_item_video_audiences"
+        android:textSize="12dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="15dp"
+        android:layout_toRightOf="@id/tv_zhibo_state"
+        android:drawableLeft="@drawable/ic_item_video_audiences"
+        android:drawablePadding="3dp"
+        android:text="486"
+        android:textColor="@color/white" />
+
+    <ImageView
+        android:id="@+id/iv_item_zhibo_logo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/tv_zhibo_introduce"
+        android:layout_marginLeft="10dp"
+        android:src="@drawable/ic_main_meipai_selected" />
+
+    <TextView
+        android:id="@+id/tv_item_zhibo_name"
+        android:textSize="12dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/tv_zhibo_introduce"
+        android:layout_toRightOf="@id/iv_item_zhibo_logo"
+        android:text="半醉一生"
+        android:textColor="@color/common_gray" />
+
+
+</RelativeLayout>

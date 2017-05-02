@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Button;
 
 import com.ut.meipai.R;
+import com.ut.meipai.adpter.MyHeadZhiboAdapter;
 import com.ut.meipai.base.BaseFragment;
 
 import butterknife.BindView;
@@ -40,6 +41,7 @@ public class VideoZhiboFragment extends BaseFragment {
         View view = LayoutInflater.from(mContext).inflate(R.layout.header_fragment_video_zhibo, null);
         mFirstBanner = (BGABanner) view.findViewById(R.id.banner_fragment_video_first);
         mSecondBanner = (BGABanner) view.findViewById(R.id.banner_fragment_video_second);
+//        mSecondBanner.setAdapter(new MyHeadZhiboAdapter());
         return view;
     }
 
