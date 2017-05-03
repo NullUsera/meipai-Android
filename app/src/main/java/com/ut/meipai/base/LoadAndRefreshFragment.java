@@ -27,10 +27,7 @@ public abstract class LoadAndRefreshFragment extends BaseRefreshLoadFragment {
         if (mTitleBar != null){
             setTitleBar(mTitleBar);
         }
-//        loadData();
     }
-
-    protected abstract void loadData();
 
     protected abstract void setTitleBar(TitleBar mTitleBar);
 }

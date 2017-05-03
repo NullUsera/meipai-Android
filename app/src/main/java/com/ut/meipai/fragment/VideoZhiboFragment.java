@@ -99,8 +99,12 @@ public class VideoZhiboFragment extends BaseRefreshLoadFragment {
 
     @Override
     public void onRefreshBegin(PtrFrameLayout frame) {
-
+            loadData();
     }
 
+    @Override
+    protected void loadData() {
 
+
+    }
 }
