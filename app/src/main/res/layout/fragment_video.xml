@@ -6,9 +6,13 @@
 
     <com.flyco.tablayout.CommonTabLayout
         android:id="@+id/tab_fragment_video"
-        android:background="@color/background_shallow"
+        android:background="@color/background_deep"
         android:layout_height="50dp"
-        android:layout_width="match_parent"/>
+        android:layout_width="match_parent"
+        app:tl_indicator_height="0dp"
+        app:tl_textSelectColor="#fc287b"
+        app:tl_textUnselectColor="@color/common_gray"
+        app:tl_textsize="14sp"/>
 
 
     <android.support.v4.view.ViewPager

@@ -1,8 +1,10 @@
 package com.ut.meipai.base;
 
+import android.app.Activity;
 import android.app.ActivityManager;
 import android.content.Context;
 import android.os.Bundle;
+import android.support.annotation.LayoutRes;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.view.KeyEvent;
@@ -11,27 +13,60 @@ import android.widget.Toast;
 
 import com.ut.meipai.manager.AppManager;
 
+import butterknife.ButterKnife;
+import butterknife.Unbinder;
+
 /**
  * Created by 任和 on 2017/04/12 15:58
  * Function:
  * Desc:
  */
-// // TODO: 2017/4/13 待完善 任和
 public abstract class BaseActivity extends AppCompatActivity {
+
+    protected Activity mContext;
+    private Unbinder mUnbinder;
+    protected boolean mIsFirstShow = true;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         super.onCreate(savedInstanceState);
+        this.mContext = this;
         AppManager.getAppManager().addActivity(this);
-        initView();
+        this.beforeSetView();
+        this.setContentView(this.getLayout());
+        this.mUnbinder = ButterKnife.bind(this);
+        this.beforeInitView();
+        this.initView(savedInstanceState);
         loadPageData();
+    }
+
+    @LayoutRes
+    protected abstract int getLayout();
+
+    protected void beforeSetView() {
+    }
+
+    protected void beforeInitView() {
+    }
+
+    protected void onResume() {
+        if(this.mIsFirstShow) {
+            this.mIsFirstShow = false;
+            this.loadData();
+        }
+
+        super.onResume();
+    }
+
+    protected void loadData() {
     }
 
     /**
      * 用于初始化当前页
      */
-    public abstract void initView();
+    protected abstract void initView(Bundle var1);
 
     /**
      * 加载当前页数据
@@ -70,5 +105,6 @@ public abstract class BaseActivity extends AppCompatActivity {
             AppManager.activityStack.remove(this);
         }
         super.onDestroy();
+        this.mUnbinder.unbind();
     }
 }

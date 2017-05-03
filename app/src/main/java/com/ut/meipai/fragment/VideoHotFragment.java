@@ -1,6 +1,7 @@
 package com.ut.meipai.fragment;
 
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
 
 import com.ut.meipai.R;
@@ -22,5 +23,9 @@ public class VideoHotFragment extends BaseFragment {
     @Override
     protected int getLayoutId() {
         return R.layout.fragment_video_common;
+    }
+
+    public void getHeader(){
+        View view = LayoutInflater.from(mContext).inflate(R.layout.header_fragment_video_hot, null);
     }
 }

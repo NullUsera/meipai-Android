@@ -15,17 +15,18 @@ import butterknife.Unbinder;
  * Created by 任和 on 2017/04/12 15:58
  * Function:
  * Desc:
- * todo 懒加载未做，内容页第一次访问数据未处理
  */
 public abstract class BaseFragment extends Fragment {
 
     protected Activity mContext;
+    protected boolean mIsFirstShow;
     private Unbinder mUnbinder;
     protected View mView;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-         mView = inflater.inflate(getLayoutId(), container, false);
-        mUnbinder=ButterKnife.bind(this,mView);
+        mView = inflater.inflate(getLayoutId(), container, false);
+        mUnbinder = ButterKnife.bind(this, mView);
         this.beforeInitView();
         this.initView(mView, savedInstanceState);
         return mView;
@@ -33,14 +34,17 @@ public abstract class BaseFragment extends Fragment {
 
     protected abstract void initView(View view, Bundle savedInstanceState);
 
-    protected void beforeInitView(){
+    protected void beforeInitView() {
 
-    };
+    }
+
+    ;
 
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
-        this.mContext = (Activity)context;
+        this.mContext = (Activity) context;
+        this.mIsFirstShow = true;
     }
 
     @Override
@@ -53,4 +57,29 @@ public abstract class BaseFragment extends Fragment {
      * 获取Fragment布局文件ID
      */
     protected abstract int getLayoutId();
+
+
+    public void onHiddenChanged(boolean hidden) {
+        if (!hidden) {
+            this.lazyLoad();
+        }
+    }
+
+    public void setUserVisibleHint(boolean isVisibleToUser) {
+        super.setUserVisibleHint(isVisibleToUser);
+        if (isVisibleToUser) {
+            this.lazyLoad();
+        }
+    }
+
+    private void lazyLoad() {
+        if (this.mIsFirstShow) {
+            this.mIsFirstShow = false;
+            this.loadData();
+        }
+    }
+
+    protected void loadData() {
+
+    }
 }

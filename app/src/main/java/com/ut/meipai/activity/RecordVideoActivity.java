@@ -1,5 +1,6 @@
 package com.ut.meipai.activity;
 
+import android.os.Bundle;
 import android.os.Message;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -71,25 +72,6 @@ public class RecordVideoActivity extends BaseActivity implements RecordBtnWrappe
 
     private boolean isOver = false;
 
-    @Override
-    public void initView() {
-        setContentView(R.layout.activity_record_video);
-        ButterKnife.bind(this);
-
-        initVCamera();
-
-        initMediaRecorder();
-
-        svFocusRecordVideoActivity.setTouchFocus(mMediaRecorder);
-
-        //处理事件
-        new RecordBtnWrapper(btnRecordRecordVideoActivity, this);
-
-        pvProgressRecordVideoActivity.setRecordOverCallback(this);
-
-        mHandler = new WeakHandler(this);
-    }
-
     /**
      * 初始化录制对象
      */
@@ -122,9 +104,30 @@ public class RecordVideoActivity extends BaseActivity implements RecordBtnWrappe
     }
 
     @Override
+    protected int getLayout() {
+        return R.layout.activity_record_video;
+    }
+
+    @Override
     protected void onResume() {
         super.onResume();
         mMediaRecorder.startPreview();
+    }
+
+    @Override
+    protected void initView(Bundle var1) {
+        initVCamera();
+
+        initMediaRecorder();
+
+        svFocusRecordVideoActivity.setTouchFocus(mMediaRecorder);
+
+        //处理事件
+        new RecordBtnWrapper(btnRecordRecordVideoActivity, this);
+
+        pvProgressRecordVideoActivity.setRecordOverCallback(this);
+
+        mHandler = new WeakHandler(this);
     }
 
     @Override

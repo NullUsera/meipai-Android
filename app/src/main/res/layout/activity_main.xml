@@ -1,18 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
     style="@style/MatchMatch">
 
-    <com.ashokvarma.bottomnavigation.BottomNavigationBar
-        android:background="#000000"
-        android:id="@+id/bottom_bar_mainActivity"
-        style="@style/MatchWrap"
-        android:layout_alignParentBottom="true"/>
+    <com.flyco.tablayout.CommonTabLayout
+        android:layout_alignParentBottom="true"
+        android:id="@+id/tablayout"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="@color/background_deep"
+        app:tl_iconHeight="23dp"
+        app:tl_iconWidth="23dp"
+        app:tl_indicator_height="0dp"
+        app:tl_textSelectColor="#fc287b"
+        app:tl_textUnselectColor="@color/common_gray"
+        app:tl_textsize="12sp"
+        app:tl_underline_color="#DDDDDD"
+        app:tl_underline_height="0dp"/>
 
 
     <FrameLayout
-        android:id="@+id/fl_fragment_mainActivity"
-        style="@style/MatchMatch"
-        android:layout_above="@id/bottom_bar_mainActivity"/>
+        android:layout_above="@id/tablayout"
+        android:id="@+id/fLayout_container"
+        style="@style/MatchMatch" />
+
+    <Button
+        android:background="@drawable/main_btn_meipai"
+        android:id="@+id/btn_main_meipai"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="56dp" />
+
 
 </RelativeLayout>

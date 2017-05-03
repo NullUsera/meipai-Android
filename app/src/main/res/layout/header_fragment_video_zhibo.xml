@@ -8,7 +8,10 @@
     <cn.bingoogolapple.bgabanner.BGABanner
         android:id="@+id/banner_fragment_video_first"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        app:banner_indicatorGravity="bottom|center_horizontal"
+        app:banner_pageChangeDuration="1500"
+        >
 
     </cn.bingoogolapple.bgabanner.BGABanner>
 
@@ -16,6 +19,7 @@
         android:id="@+id/banner_fragment_video_second"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        app:banner_pageChangeDuration="5000"
         app:banner_transitionEffect="flip">
 
     </cn.bingoogolapple.bgabanner.BGABanner>

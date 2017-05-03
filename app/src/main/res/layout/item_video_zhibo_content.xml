@@ -7,7 +7,7 @@
     android:paddingBottom="15dp">
 
     <TextView
-        android:id="@+id/tv_zhibo_introduce"
+        android:id="@+id/tv_item_zhibo_introduce"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
@@ -23,7 +23,7 @@
         android:id="@+id/tv_item_zhibo_concern"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@id/tv_zhibo_introduce"
+        android:layout_above="@id/tv_item_zhibo_introduce"
         android:layout_alignParentRight="true"
         android:layout_marginRight="5dp"
         android:text="17173"
@@ -33,7 +33,7 @@
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@id/tv_zhibo_introduce"
+        android:layout_above="@id/tv_item_zhibo_introduce"
         android:layout_marginRight="5dp"
         android:layout_toLeftOf="@id/tv_item_zhibo_concern"
         android:alpha="0.5"
@@ -66,7 +66,7 @@
         android:textColor="@color/white" />
 
     <TextView
-        android:id="@+id/tv_item_video_audiences"
+        android:id="@+id/tv_item_zhibo_audiences"
         android:textSize="12dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -82,7 +82,7 @@
         android:id="@+id/iv_item_zhibo_logo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@id/tv_zhibo_introduce"
+        android:layout_above="@id/tv_item_zhibo_introduce"
         android:layout_marginLeft="10dp"
         android:src="@drawable/ic_main_meipai_selected" />
 
@@ -91,7 +91,7 @@
         android:textSize="12dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@id/tv_zhibo_introduce"
+        android:layout_above="@id/tv_item_zhibo_introduce"
         android:layout_toRightOf="@id/iv_item_zhibo_logo"
         android:text="半醉一生"
         android:textColor="@color/common_gray" />

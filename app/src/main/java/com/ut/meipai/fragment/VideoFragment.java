@@ -87,5 +87,9 @@ public class VideoFragment extends BaseFragment {
         return mTabEntity;
     }
 
+    @Override
+    protected void loadData() {
+
+    }
 }
 

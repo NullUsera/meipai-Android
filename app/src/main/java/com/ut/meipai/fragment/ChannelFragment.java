@@ -38,7 +38,7 @@ public class ChannelFragment extends LoadAndRefreshFragment {
     ChannelHotAdapter mAdapter;
     List<ChannelHotEntity> hotData = new ArrayList<>();
     List<ChannelHeadViewEntity> headData = new ArrayList<>();
-    String picture = "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1492666045050&di=86066287e7e7dec4f6db6044d52c16e6&imgtype=0&src=http%3A%2F%2Fimg1.gtimg.com%2Fcomic%2Fpics%2Fhv1%2F52%2F127%2F2129%2F138470662.jpg";
+    static String picture = "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1492666045050&di=86066287e7e7dec4f6db6044d52c16e6&imgtype=0&src=http%3A%2F%2Fimg1.gtimg.com%2Fcomic%2Fpics%2Fhv1%2F52%2F127%2F2129%2F138470662.jpg";
 
     @Override
     protected void initView(View view, Bundle savedInstanceState) {

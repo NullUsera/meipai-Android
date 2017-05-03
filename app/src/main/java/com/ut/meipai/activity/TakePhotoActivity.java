@@ -1,5 +1,7 @@
 package com.ut.meipai.activity;
 
+import android.os.Bundle;
+
 import com.ut.meipai.base.BaseActivity;
 
 /**
@@ -11,7 +13,12 @@ import com.ut.meipai.base.BaseActivity;
 public class TakePhotoActivity extends BaseActivity {
 
     @Override
-    public void initView() {
+    protected int getLayout() {
+        return 0;
+    }
+
+    @Override
+    protected void initView(Bundle var1) {
 
     }
 
